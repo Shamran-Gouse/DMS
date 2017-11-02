@@ -1,0 +1,222 @@
+﻿@model DMS.Models.Report
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div style="height:1200px;margin-left:230px;margin-right:10px;margin-top:30px;" class="bg-blue">
+    
+        <div style="margin-bottom:10px;height:250px" class="col-md-12 bg-aqua">
+@using (Html.BeginForm("DRR", "Report", FormMethod.Post))
+{
+    <div style="margin-bottom:10px;height:220px" class="col-md-4">
+        <div class="col-md-12"><h3 style="text-align:center;color:black">Defect to remark ratio</h3></div>
+        <div class="col-md-12" style="margin-bottom:10px">
+
+
+            @Html.EditorFor(model => model.projectID, new { htmlAttributes = new { @class = "form-control", @placeholder = "Project ID" } })
+
+
+            @Html.EditorFor(model => model.QA_ID, new { htmlAttributes = new { @class = "form-control", @placeholder = "QA ID" } })
+            @Html.ValidationMessageFor(model => model.projectID, "", new { @class = "text-danger" })
+
+
+        </div>
+
+        <div class="box-footer" style="margin-top:10px">
+            @*<button type="submit" class="btn btn-info pull-right" onclick="location.href='@Url.Action("ViewDefectDensity_RPT", "Report")'"> Generate Report</button>*@
+
+            <button type="submit" class="btn btn-info pull-right" name="command1"> Generate Report</button>
+        </div>
+    </div>
+
+}
+
+@using (Html.BeginForm("ViewOpenDefect", "Report", FormMethod.Post))
+{
+            <div style="margin-bottom:10px;height:220px" class="col-md-4">
+                <div class="col-md-12"><h3 style="text-align:center;color:black">Open defects Vs closed defect </h3></div>
+                <div class="col-md-12" style="margin-bottom:10px">
+
+
+
+                    @Html.EditorFor(model => model.projectID, new { htmlAttributes = new { @class = "form-control", @placeholder = "Project ID" } })
+                    @Html.ValidationMessageFor(model => model.projectID, "", new { @class = "text-danger" })
+
+
+                </div>
+
+                <div class="box-footer" style="margin-top:10px">
+
+                    <button type="submit" class="btn btn-info pull-right"> Generate Report</button>
+                </div>
+            </div>
+}
+
+  @using (Html.BeginForm("ViewDefectDensity_RPT", "Report", FormMethod.Post))
+            {
+                <div style="margin-bottom:10px;height:220px" class="col-md-4">
+                    <div class="col-md-12"><h3 style="text-align:center; color:black">Defect Density </h3></div>
+                    <div class="col-md-12" style="margin-bottom:10px">
+
+
+
+                        @Html.EditorFor(model => model.projectID, new { htmlAttributes = new { @class = "form-control", @placeholder = "Project ID" } })
+                        @Html.ValidationMessageFor(model => model.projectID, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.MID, new { htmlAttributes = new { @class = "form-control", @placeholder = "Module ID" } })
+
+
+
+
+                    </div>
+
+                    <div class="box-footer" style="margin-top:10px">
+
+                        <button type="submit" class="btn btn-info pull-right"> Generate Report</button>
+                    </div>
+                </div>
+            }
+
+        </div>
+        
+
+
+        <div style="margin-bottom:10px;height:250px;" class="col-md-12 bg-aqua">
+            @using (Html.BeginForm("LifeCycle", "Report", FormMethod.Post))
+            {
+                <div style="margin-bottom:10px;height:220px" class="col-md-4">
+                    <div class="col-md-12"><h3 style="text-align:center;color:black">The stage of most number of defects generated in the SDLC </h3></div>
+                    <div class="col-md-12" style="margin-bottom:10px">
+
+
+                        @Html.EditorFor(model => model.projectID, new { htmlAttributes = new { @class = "form-control", @placeholder = "Project ID" } })
+
+
+                        @Html.ValidationMessageFor(model => model.projectID, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                    <div class="box-footer" style="margin-top:10px">
+                        @*<button type="submit" class="btn btn-info pull-right" onclick="location.href='@Url.Action("ViewDefectDensity_RPT", "Report")'"> Generate Report</button>*@
+
+                        <button type="submit" class="btn btn-info pull-right" name="command1"> Generate Report</button>
+                    </div>
+                </div>
+
+            }
+
+            @using (Html.BeginForm("DefectLeakage", "Report", FormMethod.Post))
+            {
+                <div style="height:220px;margin-bottom:10px" class="col-md-4">
+                    <div class="col-md-12"><h3 style="text-align:center;color:black">Defect leakage analysis report </h3></div>
+                    <div class="col-md-12" style="margin-bottom:10px">
+
+
+                        @Html.EditorFor(model => model.projectID, new { htmlAttributes = new { @class = "form-control", @placeholder = "Project ID" } })
+
+                        @Html.EditorFor(model => model.ClientIdendtifyDefect, new { htmlAttributes = new { @class = "form-control", @placeholder = "End user / client identified defects" } })
+                        @Html.ValidationMessageFor(model => model.projectID, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                    <div class="box-footer" style="margin-top:10px">
+
+                        <button type="submit" class="btn btn-info pull-right"> Generate Report</button>
+                    </div>
+                </div>
+            }
+            @using DMS.Models
+            @using (Html.BeginForm("Defectagingreport", "Report", FormMethod.Post))
+            {
+                <div style="margin-bottom:10px;height:220px" class="col-md-4">
+                    <div class="col-md-12"><h3 style="color:black">Defect Aging report </h3></div>
+                    <div class="col-md-12" style="margin-bottom:10px">
+
+
+
+                        @Html.EditorFor(model => model.projectID, new { htmlAttributes = new { @class = "form-control", @placeholder = "Project ID" } })
+                        @Html.ValidationMessageFor(model => model.projectID, "", new { @class = "text-danger" })
+
+                        <div class="form-group has-feedback">
+                            @Html.DropDownListFor(model => model.weak, ReportAge.GetWeak(), "Select Weak", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.weak, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+
+                    <div class="box-footer" style="margin-top:10px">
+
+                        <button type="submit" class="btn btn-info pull-right"> Generate Report</button>
+                    </div>
+                </div>
+            }
+
+        </div>
+
+
+        <div style="margin-bottom:10px;height:250px" class="col-md-12 bg-aqua">
+            @using (Html.BeginForm("DefectSeverity", "Report", FormMethod.Post))
+            {
+                <div style="margin-bottom:10px;height:220px" class="col-md-4">
+                    <div class="col-md-12"><h3 style="text-align:center;color:black">Defect severity report </h3></div>
+                    <div class="col-md-12" style="margin-bottom:10px">
+
+
+                        @Html.EditorFor(model => model.projectID, new { htmlAttributes = new { @class = "form-control", @placeholder = "Project ID" } })
+
+
+                        @Html.ValidationMessageFor(model => model.projectID, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                    <div class="box-footer" style="margin-top:10px">
+                        @*<button type="submit" class="btn btn-info pull-right" onclick="location.href='@Url.Action("ViewDefectDensity_RPT", "Report")'"> Generate Report</button>*@
+
+                        <button type="submit" class="btn btn-info pull-right" name="command1"> Generate Report</button>
+                    </div>
+                </div>
+
+            }
+
+            
+            @using DMS.Models
+            @using (Html.BeginForm("RCA", "Report", FormMethod.Post))
+            {
+                <div style="margin-bottom:10px;height:220px" class="col-md-4">
+                    <div class="col-md-12"><h3 style="color:black">RCA of the defect Vs effectiveness of the fix </h3></div>
+                    <div class="col-md-12" style="margin-bottom:10px">
+
+
+
+                        @Html.EditorFor(model => model.projectID, new { htmlAttributes = new { @class = "form-control", @placeholder = "Project ID" } })
+                        @Html.ValidationMessageFor(model => model.projectID, "", new { @class = "text-danger" })
+
+                        <div class="form-group has-feedback">
+                            @Html.DropDownListFor(model => model.RCA, DefectMethods.GetRCAresult(), "Select RCA", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.weak, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+
+                    <div class="box-footer" style="margin-top:10px">
+
+                        <button type="submit" class="btn btn-info pull-right"> Generate Report</button>
+                    </div>
+                </div>
+            }
+
+        </div>
+
+    
+    
+    
+   
+</div>
+ 
+

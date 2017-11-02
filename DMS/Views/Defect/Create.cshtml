@@ -1,0 +1,102 @@
+﻿@using DMS.Models
+@model Defect
+
+@{
+	ViewBag.Title = "Raise";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!-- Content Header (Page header) -->
+	<section class="content-header">
+		<h1>
+			Raise Defect
+		</h1>
+	</section>
+
+	<!-- Main content -->
+	<section class="content">
+		<div class="row">
+
+			<div class="col-md-offset-3 col-md-6" style="margin-top:50px;">
+				<!-- Horizontal Form -->
+				<div class="box box-info">
+					<!-- form start -->
+					@using (Html.BeginForm())
+					{
+						@Html.AntiForgeryToken()
+
+						<div class="form-horizontal">
+
+							@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+							<div class="box-body">
+
+							@Html.HiddenFor(Model => Model.PID)
+							@Html.HiddenFor(Model => Model.MID)
+							@Html.HiddenFor(Model => Model.SMID)
+
+							@Html.HiddenFor(Model => Model.Assigned_to)
+								<div class="form-group">
+									@Html.LabelFor(model => model.TCID, htmlAttributes: new { @class = "col-sm-3 control-label" })
+									<div class="col-sm-9">
+										@Html.EditorFor(model => model.TCID, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control", @placeholder = "Test Case Id" } })
+										@Html.ValidationMessageFor(model => model.TCID, "", new { @class = "text-danger" })
+									</div>
+								</div>
+
+								<div class="form-group">
+									<!--Defect ID - Auto Generate field---------------------------->
+									@Html.LabelFor(model => model.Defect_id, htmlAttributes: new { @class = "col-sm-3 control-label" })
+									<div class="col-sm-9">
+										@Html.EditorFor(model => model.Defect_id, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control", @placeholder = "Defect Id" } })
+										@Html.ValidationMessageFor(model => model.Defect_id, "", new { @class = "text-danger" })
+									</div>
+								</div>
+
+								<!--Description Field-Enter by QA------------------------------>
+								<div class="form-group">
+									@Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "col-sm-3 control-label" })
+									<div class="col-sm-9">
+										@Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control", @placeholder = "Description" } })
+										@Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+									</div>
+								</div>
+
+								<div class="form-group">
+									@Html.LabelFor(model => model.Piority, htmlAttributes: new { @class = "col-sm-3 control-label" })
+									<div class="col-sm-9">
+										@Html.DropDownListFor(model => model.Piority, DefectMethods.Piority(), "Select Piority", new { @class = "form-control" })
+										@Html.ValidationMessage("UserError", new { @class = "text-danger" })
+									</div>
+								</div>
+
+								<div class="form-group">
+									@Html.LabelFor(model => model.Severity, htmlAttributes: new { @class = "col-sm-3 control-label" })
+									<div class="col-sm-9">
+										@Html.DropDownListFor(model => model.Severity, DefectMethods.Severity(), "Select Severity", new { @class = "form-control" })
+										@Html.ValidationMessage("UserError", new { @class = "text-danger" })
+									</div>
+								</div>
+								
+								@*for error message*@
+								@Html.ValidationMessage("CreateError", new { @class = "text-danger" })
+							
+							</div><!-- /.box-body -->
+
+							<div class="box-footer">
+								<a href="@Url.Action("TestSteps", "Test", new { @id = Model.Row_id })" class="btn btn-default"> Cancel </a>
+								<button type="submit" class="btn btn-info pull-right"> Raise </button>
+							</div>
+
+						</div>
+					}
+
+					</div><!-- /.box -->
+					
+				</div><!--/.col (right) -->
+			</div>   <!-- /.row -->
+
+		</section><!-- /.content -->
+	</div><!-- /.content-wrapper -->

@@ -1,0 +1,75 @@
+﻿@using DMS.Models
+@model TestCase
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Test Case
+            <small>
+                Details
+            </small>
+        </h1>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-offset-2 col-xs-8">
+                <div class="box">
+
+                    <div class="box-body">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-horizontal">
+
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                <div class="box-body">
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.PID, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                                        <div class="col-sm-9">
+                                            @Html.EditorFor(model => model.PID, new { htmlAttributes = new { @class = "form-control", @placeholder = "Project ID" } })
+                                            @Html.ValidationMessageFor(model => model.PID, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.MID, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                                        <div class="col-sm-9">
+                                            @Html.EditorFor(model => model.MID, new { htmlAttributes = new { @class = "form-control", @placeholder = "Module ID" } })
+                                            @Html.ValidationMessageFor(model => model.MID, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.SMID, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                                        <div class="col-sm-9">
+                                            @Html.EditorFor(model => model.SMID, new { htmlAttributes = new { @class = "form-control", @placeholder = "Sub Module ID" } })
+                                            @Html.ValidationMessageFor(model => model.SMID, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="box-footer">
+                                    <button type="submit" class="btn btn-info pull-right"> Search </button>
+                                </div>
+
+                            </div>
+                        }
+                    </div>
+                </div><!-- /.box -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </section><!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

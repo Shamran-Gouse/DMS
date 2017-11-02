@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DMS.Properties.Settings.ConnectionString-Web.config Connection String" description="DMS.Properties.Settings.ConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=tcp:dms-ase.database.windows.net,1433;Initial Catalog=DMS_DB;Persist Security Info=False;User ID=shamran;Password=Grade123;MultipleActiveResultSets=False;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\shamr\\documents\\visual\ studio\ 2015\\Projects\\DMS\\DMS\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DMS.Properties.Settings.ConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

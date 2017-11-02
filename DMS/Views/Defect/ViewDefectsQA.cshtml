@@ -1,0 +1,94 @@
+﻿@using DMS.Models
+@model System.Data.DataTable
+
+@{
+    ViewBag.Title = "View Test Cases";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Defect
+            <small>
+                Details
+            </small>
+        </h1>
+    </section>
+
+    <ol class="breadcrumb">
+        <li><a href="@Url.Action("Index", "Defect")"><i class="fa fa-bug" aria-hidden="true"></i> Defect </a></li>
+        <li class="active">Defect Detail</li>
+    </ol>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title"> Defect </h3>
+                        <div class="clearfix"></div>
+                    </div><!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Defect ID</th>
+                                    <th>Description</th>
+                                    <th>Open Date</th>
+                                    <th>Close Date</th>
+                                    <th>Owner</th>
+                                    <th>Assigned To</th>
+                                    <th>Status</th>
+                                    <th>RCA</th>
+                                    <th>Count</th>
+
+
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+
+                                @for (int i = 0; i < Model.Rows.Count; i++)
+                                {
+                                    <tr>
+                                        <td>@Model.Rows[i][0]</td>
+                                        <td>@Model.Rows[i][2]</td>
+                                        <td>@Convert.ToDateTime(@Model.Rows[i][3]).ToString("MM/dd/yyyy")</td>
+                                        @if (@Model.Rows[i][4] != DBNull.Value)
+                                        {
+                                            <td>@Convert.ToDateTime(@Model.Rows[i][4]).ToString("MM/dd/yyyy")</td>
+
+                                        }
+                                        else
+                                        {
+                                            <td>@Model.Rows[i][4]</td>
+                                        }
+                                        <td>@Model.Rows[i][5]</td>
+                                        <td>@Model.Rows[i][6]</td>
+                                        <td>@Model.Rows[i][7]</td>
+                                        <td>@Model.Rows[i][8]</td>
+                                        <td>@Model.Rows[i][9]</td>
+
+
+                                        <td>
+                                            &nbsp;
+                                            <a href="@Url.Action("DefectTestCase", "Defect", new { @id = @Model.Rows[i][1] })"> View </a>
+                                            &nbsp;
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div><!-- /.box-body -->
+                </div><!-- /.box -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </section><!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

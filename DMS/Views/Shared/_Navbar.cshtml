@@ -1,0 +1,80 @@
+﻿<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+            <li class="header">MAIN NAVIGATION</li>
+
+            @{
+                switch ((string)Session["User_Role"])
+                {
+                    case "Admin":
+                        <li>
+                            <a href="@Url.Action("Index", "User")">
+                                <i class="fa fa-users" aria-hidden="true"></i> <span>Users</span>
+                            </a>
+                        </li>
+                        break;
+
+                    case "PM":
+                        <li>
+                            <a href="@Url.Action("Index", "Project")">
+                                <i class="fa fa-th"></i> <span>Projects</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "Report")">
+                                <i class="fa fa-book"></i> <span>Reports</span>
+                            </a>
+                        </li>
+
+                        break;
+
+                    case "ML":
+                        <li>
+                            <a href="@Url.Action("Modules", "Module")">
+                                <i class="fa fa-list-alt" aria-hidden="true"></i> <span>Modules</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "Defect")">
+                                <i class="fa fa-bug" aria-hidden="true"></i> <span> Defects </span>
+                            </a>
+                        </li>
+                        break;
+
+                    case "Developer":
+                        <li>
+                            <a href="@Url.Action("Index", "Defect")">
+                                <i class="fa fa-bug" aria-hidden="true"></i> <span> Defects </span>
+                            </a>
+                        </li>
+                        break;
+
+                    case "QA":
+                        <li>
+                            <a href="@Url.Action("Index", "TestCase")">
+                                <i class="fa fa-file-text" aria-hidden="true"></i> <span>Test Cases</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "Test")">
+                                <i class="fa fa-wrench" aria-hidden="true"></i> <span> Test </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "Defect")">
+                                <i class="fa fa-bug" aria-hidden="true"></i> <span> Defects </span>
+                            </a>
+                        </li>
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="DMS-ASE" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\shamr\\documents\\visual\ studio\ 2015\\Projects\\DMS\\DMS\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\shamr\\documents\\visual\ studio\ 2015\\Projects\\DMS\\DMS\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DMS.Properties.Settings.ConnectionString-Web.config Connection String" description="" value="data source=tcp:dms-ase.database.windows.net,1433;initial catalog=DMS_DB;persist security info=False;user id=shamran;password=Grade123;connect timeout=30;encrypt=True;trustservercertificate=False;MultipleActiveResultSets=False" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\shamr\\documents\\visual\ studio\ 2015\\Projects\\DMS\\DMS\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DMS.Properties.Settings.ConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,88 @@
+﻿@using DMS.Models
+@model TestCaseSteps
+
+@{
+    ViewBag.Title = "TestCaseDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var id = Url.RequestContext.RouteData.Values["id"];
+}
+
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Test Steps
+        </h1>
+    </section>
+
+    <ol class="breadcrumb">
+        <li><a href="@Url.Action("ViewTestCases", "Test", new { @Pid = Model.PID, @Mid = Model.MID, @SMid = Model.SMID })"><i class="fa fa-bug" aria-hidden="true"></i> Defect </a></li>
+        <li class="active"> Test Steps</li>
+    </ol>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+
+            <div class="col-sm-12" style="margin-top:50px;">
+                <div class="box box-info">
+                    <div class="form-horizontal">
+
+                        <div class="box-header">
+                            <div class="form-group">
+                                <label for="TCID" class="col-sm-3 control-label">Test Case ID</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="col-sm-9 form-control" id="TCID" placeholder="Test Case ID" value="@Model.TCID" readonly>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="TestCaseTitle" class="col-sm-3 control-label">Test Case Title</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="col-sm-9 form-control" id="TestCaseTitle" placeholder="Test Case Title" value="@Model.Title" readonly>
+                                </div>
+                            </div>
+
+                            @{
+                                    if ((string)Session["User_Role"] == "ML")
+                                    {
+                                        <div class="form-group">
+                                            @* Dynamic ML view*@
+                                            @{ Html.RenderAction("_MLDefectControl", "Defect", new { id = Convert.ToInt32(id) }); }
+                                        </div>
+
+                                                }
+                                                else if ((string)Session["User_Role"] == "Developer")
+                                                {
+                                                    <div class="form-group">
+                                                        @* Dynamic ML view*@
+                                                        @{ Html.RenderAction("_DeveloperDefectControl", "Defect", new { id = Convert.ToInt32(id) }); }
+                                                    </div>
+                                                            }
+                                                            else if ((string)Session["User_Role"] == "QA")
+                                                            {
+                                                                <div class="form-group">
+                                                                    @* Dynamic ML view*@
+                                                                    @{ Html.RenderAction("_QADefectControl", "Defect", new { id = Convert.ToInt32(id) }); }
+                                                                </div>
+                                                                        }
+                            }
+                            
+
+                        </div>
+
+
+                        <div class="box-body">
+                            @* Step Table list view *@
+                            @{ Html.RenderAction("_TestStepTable", "Test", new { id = Convert.ToInt32(id) }); }
+                        </div><!-- /.box-body -->
+
+                    </div>
+                </div><!-- /.box -->
+            </div><!--/.col (right) -->
+        </div>   <!-- /.row -->
+    </section><!-- /.content -->
+</div><!-- /.content-wrapper -->

@@ -1,0 +1,75 @@
+﻿@model System.Data.DataTable
+
+@{
+    ViewBag.Title = "User Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            User
+            <small>
+                Details
+            </small>
+        </h1>
+        <div class="row">
+            <div class="col-md-2 col-xs-2" style="float:right;">
+                <a href="@Url.Action("Create", "User")" class="btn btn-block btn-primary"> Create </a>
+            </div>
+        </div>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title"> User </h3>
+                        <div class="clearfix"></div>
+                    </div><!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Password</th>
+                                    <th>User Role</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+
+                                @for (int i = 0; i < Model.Rows.Count; i++)
+                                {
+                                    <tr>
+                                        <td>@Model.Rows[i][0]</td>
+                                        <td>@Model.Rows[i][1]</td>
+                                        <td>@Model.Rows[i][2]</td>
+                                        <td>@Model.Rows[i][3]</td>
+                                        <td>@Model.Rows[i][4]</td>
+
+                                        <td>
+                                            <a href="@Url.Action("Edit", "User", new { @id = @Model.Rows[i][0] })"> Edit </a>
+                                            &nbsp;
+                                            &nbsp;
+                                            &nbsp;
+                                            <a href="@Url.Action("Delete", "User", new { @id = @Model.Rows[i][0] })" onclick="return confirm('Are you sure you wish to delete this User?');"> Delete </a>
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div><!-- /.box-body -->
+                </div><!-- /.box -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </section><!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

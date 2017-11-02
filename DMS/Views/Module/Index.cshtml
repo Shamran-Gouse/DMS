@@ -1,0 +1,84 @@
+﻿@using DMS.Models
+@model System.Data.DataTable
+@{
+    ViewBag.Title = "Modules";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Manage
+            <small>
+                Modules
+            </small>
+        </h1>
+       
+       
+    </section>
+
+    <ol class="breadcrumb">
+        <li><a href="@Url.Action("Index", "Project")"><i class="fa fa-th"></i> Projects</a></li>
+        <li class="active"><i class="fa fa-list-alt" aria-hidden="true"></i> Modules </li>
+    </ol>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row" style="margin-bottom: 2%;">
+            <div class="col-md-2 col-xs-2" style="float:right;">
+                <a href="@Url.Action("Create", "Module", new { @id =  Url.RequestContext.RouteData.Values["id"]} )" class="btn btn-block btn-primary"> ADD Module </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title"> Modules </h3>
+                        <div class="clearfix"></div>
+                    </div><!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Module ID</th>
+                                    <th>Name</th>
+                                    <th>Module Leader</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+
+                                @for (int i = 0; i < Model.Rows.Count; i++)
+                                {
+                                    <tr>
+                                        <td>@Model.Rows[i][1]</td>
+                                        <td>@Model.Rows[i][2]</td>
+
+                                        <td>
+                                            @UserRole.GetUserNameById(Convert.ToInt32(@Model.Rows[i][3]))
+                                        </td>
+
+                                   
+
+                                        <td>
+                                            <a href="@Url.Action("Edit", "Module", new { @Pid = @Model.Rows[i][0], @Mid = @Model.Rows[i][1] })"> Edit </a>
+                                            &nbsp;
+                                            &nbsp;
+                                            &nbsp;
+                                            <a href="@Url.Action("Delete", "Module", new { @Pid = @Model.Rows[i][0], @Mid = @Model.Rows[i][1] })" onclick="return confirm('Are you sure you wish to delete this Module?');"> Delete </a>
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div><!-- /.box-body -->
+                </div><!-- /.box -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </section><!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

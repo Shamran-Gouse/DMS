@@ -1,0 +1,1478 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_REPORTS" targetNamespace="http://tempuri.org/DS_REPORTS.xsd" xmlns:mstns="http://tempuri.org/DS_REPORTS.xsd" xmlns="http://tempuri.org/DS_REPORTS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DMS.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DEFECT_DENSITYTableAdapter" GeneratorDataComponentClassName="DEFECT_DENSITYTableAdapter" Name="DEFECT_DENSITY" UserDataComponentName="DEFECT_DENSITYTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT   * from  Defect  
+ JOIN TestCase ON Defect.Row_ID = TestCase.Row_ID
+ JOIN Project ON TestCase.PID = Project.PID </CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Defect_id" DataSetColumn="Defect_id" />
+              <Mapping SourceColumn="Row_ID" DataSetColumn="Row_ID" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="OpenDate" DataSetColumn="OpenDate" />
+              <Mapping SourceColumn="CloseDate" DataSetColumn="CloseDate" />
+              <Mapping SourceColumn="Owner" DataSetColumn="Owner" />
+              <Mapping SourceColumn="Assigned_To" DataSetColumn="Assigned_To" />
+              <Mapping SourceColumn="Defect_Status" DataSetColumn="Defect_Status" />
+              <Mapping SourceColumn="RCA" DataSetColumn="RCA" />
+              <Mapping SourceColumn="Defect_Count" DataSetColumn="Defect_Count" />
+              <Mapping SourceColumn="PID" DataSetColumn="PID" />
+              <Mapping SourceColumn="MID" DataSetColumn="MID" />
+              <Mapping SourceColumn="SMID" DataSetColumn="SMID" />
+              <Mapping SourceColumn="TCID" DataSetColumn="TCID" />
+              <Mapping SourceColumn="Title" DataSetColumn="Title" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="TestBy" DataSetColumn="TestBy" />
+              <Mapping SourceColumn="Row_ID1" DataSetColumn="Row_ID1" />
+              <Mapping SourceColumn="PID1" DataSetColumn="PID1" />
+              <Mapping SourceColumn="Project_Name" DataSetColumn="Project_Name" />
+              <Mapping SourceColumn="StartDate" DataSetColumn="StartDate" />
+              <Mapping SourceColumn="EndDate" DataSetColumn="EndDate" />
+              <Mapping SourceColumn="PMID" DataSetColumn="PMID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DRRTableAdapter" GeneratorDataComponentClassName="DRRTableAdapter" Name="DRR" UserDataComponentName="DRRTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Defect.Defect_id, Defect.Row_ID, Defect.Description, Defect.OpenDate, Defect.CloseDate, Defect.Owner, Defect.Assigned_To, Defect.Defect_Status, Defect.RCA, Defect.Defect_Count, TestCase.Row_ID AS Expr1, TestCase.PID, 
+                         TestCase.MID, TestCase.SMID, TestCase.TCID, TestCase.Title, TestCase.Status, TestCase.TestBy, Project.PID AS Expr2, Project.Project_Name, Project.StartDate, Project.EndDate, Project.PMID, [User].UID, [User].Name, 
+                         [User].Email, [User].Password, [User].User_Role
+FROM            Defect INNER JOIN
+                         TestCase INNER JOIN
+                         Project ON TestCase.PID = Project.PID INNER JOIN
+                         [User] ON TestCase.TestBy = [User].UID ON Defect.Row_ID = TestCase.Row_ID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Defect_id" DataSetColumn="Defect_id" />
+              <Mapping SourceColumn="Row_ID" DataSetColumn="Row_ID" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="OpenDate" DataSetColumn="OpenDate" />
+              <Mapping SourceColumn="CloseDate" DataSetColumn="CloseDate" />
+              <Mapping SourceColumn="Owner" DataSetColumn="Owner" />
+              <Mapping SourceColumn="Assigned_To" DataSetColumn="Assigned_To" />
+              <Mapping SourceColumn="Defect_Status" DataSetColumn="Defect_Status" />
+              <Mapping SourceColumn="RCA" DataSetColumn="RCA" />
+              <Mapping SourceColumn="Defect_Count" DataSetColumn="Defect_Count" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="PID" DataSetColumn="PID" />
+              <Mapping SourceColumn="MID" DataSetColumn="MID" />
+              <Mapping SourceColumn="SMID" DataSetColumn="SMID" />
+              <Mapping SourceColumn="TCID" DataSetColumn="TCID" />
+              <Mapping SourceColumn="Title" DataSetColumn="Title" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="TestBy" DataSetColumn="TestBy" />
+              <Mapping SourceColumn="Expr2" DataSetColumn="Expr2" />
+              <Mapping SourceColumn="Project_Name" DataSetColumn="Project_Name" />
+              <Mapping SourceColumn="StartDate" DataSetColumn="StartDate" />
+              <Mapping SourceColumn="EndDate" DataSetColumn="EndDate" />
+              <Mapping SourceColumn="PMID" DataSetColumn="PMID" />
+              <Mapping SourceColumn="UID" DataSetColumn="UID" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="Email" DataSetColumn="Email" />
+              <Mapping SourceColumn="Password" DataSetColumn="Password" />
+              <Mapping SourceColumn="User_Role" DataSetColumn="User_Role" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OpenVSClosedTableAdapter" GeneratorDataComponentClassName="OpenVSClosedTableAdapter" Name="OpenVSClosed" UserDataComponentName="OpenVSClosedTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Defect.Defect_id, Defect.Row_ID, Defect.Description, Defect.OpenDate, Defect.CloseDate, Defect.Owner, Defect.Assigned_To, Defect.Defect_Status, Defect.RCA, Defect.Defect_Count, TestCase.Row_ID AS Expr1, TestCase.PID, 
+                         TestCase.MID, TestCase.SMID, TestCase.TCID, TestCase.Title, TestCase.Status, TestCase.TestBy
+FROM            Defect INNER JOIN
+                         TestCase ON Defect.Row_ID = TestCase.Row_ID INNER JOIN
+                         Project ON TestCase.PID = Project.PID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Defect_id" DataSetColumn="Defect_id" />
+              <Mapping SourceColumn="Row_ID" DataSetColumn="Row_ID" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="OpenDate" DataSetColumn="OpenDate" />
+              <Mapping SourceColumn="CloseDate" DataSetColumn="CloseDate" />
+              <Mapping SourceColumn="Owner" DataSetColumn="Owner" />
+              <Mapping SourceColumn="Assigned_To" DataSetColumn="Assigned_To" />
+              <Mapping SourceColumn="Defect_Status" DataSetColumn="Defect_Status" />
+              <Mapping SourceColumn="RCA" DataSetColumn="RCA" />
+              <Mapping SourceColumn="Defect_Count" DataSetColumn="Defect_Count" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="PID" DataSetColumn="PID" />
+              <Mapping SourceColumn="MID" DataSetColumn="MID" />
+              <Mapping SourceColumn="SMID" DataSetColumn="SMID" />
+              <Mapping SourceColumn="TCID" DataSetColumn="TCID" />
+              <Mapping SourceColumn="Title" DataSetColumn="Title" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="TestBy" DataSetColumn="TestBy" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DDTableAdapter" GeneratorDataComponentClassName="DDTableAdapter" Name="DD" UserDataComponentName="DDTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Defect.Defect_id, Defect.Row_ID, Defect.Description, Defect.OpenDate, Defect.CloseDate, Defect.Owner, Defect.Assigned_To, Defect.Defect_Status, Defect.RCA, Defect.Defect_Count, TestCase.Row_ID AS Expr1, TestCase.PID, 
+                         TestCase.MID, TestCase.SMID, TestCase.TCID, TestCase.Title, TestCase.Status, TestCase.TestBy, Project.PID AS Expr2, Project.Project_Name, Project.StartDate, Project.EndDate, Project.PMID
+FROM            Defect INNER JOIN
+                         TestCase ON Defect.Row_ID = TestCase.Row_ID INNER JOIN
+                         Project ON TestCase.PID = Project.PID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Defect_id" DataSetColumn="Defect_id" />
+              <Mapping SourceColumn="Row_ID" DataSetColumn="Row_ID" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="OpenDate" DataSetColumn="OpenDate" />
+              <Mapping SourceColumn="CloseDate" DataSetColumn="CloseDate" />
+              <Mapping SourceColumn="Owner" DataSetColumn="Owner" />
+              <Mapping SourceColumn="Assigned_To" DataSetColumn="Assigned_To" />
+              <Mapping SourceColumn="Defect_Status" DataSetColumn="Defect_Status" />
+              <Mapping SourceColumn="RCA" DataSetColumn="RCA" />
+              <Mapping SourceColumn="Defect_Count" DataSetColumn="Defect_Count" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="PID" DataSetColumn="PID" />
+              <Mapping SourceColumn="MID" DataSetColumn="MID" />
+              <Mapping SourceColumn="SMID" DataSetColumn="SMID" />
+              <Mapping SourceColumn="TCID" DataSetColumn="TCID" />
+              <Mapping SourceColumn="Title" DataSetColumn="Title" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="TestBy" DataSetColumn="TestBy" />
+              <Mapping SourceColumn="Expr2" DataSetColumn="Expr2" />
+              <Mapping SourceColumn="Project_Name" DataSetColumn="Project_Name" />
+              <Mapping SourceColumn="StartDate" DataSetColumn="StartDate" />
+              <Mapping SourceColumn="EndDate" DataSetColumn="EndDate" />
+              <Mapping SourceColumn="PMID" DataSetColumn="PMID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="lIFE_CYCLETableAdapter" GeneratorDataComponentClassName="lIFE_CYCLETableAdapter" Name="lIFE_CYCLE" UserDataComponentName="lIFE_CYCLETableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Defect.Defect_id, Defect.Row_ID, Defect.Description, Defect.OpenDate, Defect.CloseDate, Defect.Owner, Defect.Assigned_To, Defect.Defect_Status, Defect.RCA, Defect.Defect_Count, TestCase.Row_ID AS Expr1, TestCase.PID, 
+                         TestCase.MID, TestCase.SMID, TestCase.TCID, TestCase.Title, TestCase.Status, TestCase.TestBy, Project.PID AS Expr2, Project.Project_Name, Project.StartDate, Project.EndDate, Project.PMID
+FROM            Defect INNER JOIN
+                         TestCase ON Defect.Row_ID = TestCase.Row_ID CROSS JOIN
+                         Project</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Defect_id" DataSetColumn="Defect_id" />
+              <Mapping SourceColumn="Row_ID" DataSetColumn="Row_ID" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="OpenDate" DataSetColumn="OpenDate" />
+              <Mapping SourceColumn="CloseDate" DataSetColumn="CloseDate" />
+              <Mapping SourceColumn="Owner" DataSetColumn="Owner" />
+              <Mapping SourceColumn="Assigned_To" DataSetColumn="Assigned_To" />
+              <Mapping SourceColumn="Defect_Status" DataSetColumn="Defect_Status" />
+              <Mapping SourceColumn="RCA" DataSetColumn="RCA" />
+              <Mapping SourceColumn="Defect_Count" DataSetColumn="Defect_Count" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="PID" DataSetColumn="PID" />
+              <Mapping SourceColumn="MID" DataSetColumn="MID" />
+              <Mapping SourceColumn="SMID" DataSetColumn="SMID" />
+              <Mapping SourceColumn="TCID" DataSetColumn="TCID" />
+              <Mapping SourceColumn="Title" DataSetColumn="Title" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="TestBy" DataSetColumn="TestBy" />
+              <Mapping SourceColumn="Expr2" DataSetColumn="Expr2" />
+              <Mapping SourceColumn="Project_Name" DataSetColumn="Project_Name" />
+              <Mapping SourceColumn="StartDate" DataSetColumn="StartDate" />
+              <Mapping SourceColumn="EndDate" DataSetColumn="EndDate" />
+              <Mapping SourceColumn="PMID" DataSetColumn="PMID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_GET_DEFECT_AGETableAdapter" GeneratorDataComponentClassName="SP_GET_DEFECT_AGETableAdapter" Name="SP_GET_DEFECT_AGE" UserDataComponentName="SP_GET_DEFECT_AGETableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="DMS_DB.dbo.SP_GET_DEFECT_AGE" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.SP_GET_DEFECT_AGE</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@day" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@PID" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Defect_id" DataSetColumn="Defect_id" />
+              <Mapping SourceColumn="Row_ID" DataSetColumn="Row_ID" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="OpenDate" DataSetColumn="OpenDate" />
+              <Mapping SourceColumn="CloseDate" DataSetColumn="CloseDate" />
+              <Mapping SourceColumn="Owner" DataSetColumn="Owner" />
+              <Mapping SourceColumn="Assigned_To" DataSetColumn="Assigned_To" />
+              <Mapping SourceColumn="Defect_Status" DataSetColumn="Defect_Status" />
+              <Mapping SourceColumn="RCA" DataSetColumn="RCA" />
+              <Mapping SourceColumn="Defect_Count" DataSetColumn="Defect_Count" />
+              <Mapping SourceColumn="Row_ID1" DataSetColumn="Row_ID1" />
+              <Mapping SourceColumn="PID" DataSetColumn="PID" />
+              <Mapping SourceColumn="MID" DataSetColumn="MID" />
+              <Mapping SourceColumn="SMID" DataSetColumn="SMID" />
+              <Mapping SourceColumn="TCID" DataSetColumn="TCID" />
+              <Mapping SourceColumn="Title" DataSetColumn="Title" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="TestBy" DataSetColumn="TestBy" />
+              <Mapping SourceColumn="PID1" DataSetColumn="PID1" />
+              <Mapping SourceColumn="Project_Name" DataSetColumn="Project_Name" />
+              <Mapping SourceColumn="StartDate" DataSetColumn="StartDate" />
+              <Mapping SourceColumn="EndDate" DataSetColumn="EndDate" />
+              <Mapping SourceColumn="PMID" DataSetColumn="PMID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_GET_DEFECT_DEFECT_DENSITY_MODUEL_WISETableAdapter" GeneratorDataComponentClassName="SP_GET_DEFECT_DEFECT_DENSITY_MODUEL_WISETableAdapter" Name="SP_GET_DEFECT_DEFECT_DENSITY_MODUEL_WISE" UserDataComponentName="SP_GET_DEFECT_DEFECT_DENSITY_MODUEL_WISETableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="DMS_DB.dbo.SP_GET_DEFECT_DEFECT_DENSITY_MODUEL_WISE" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.SP_GET_DEFECT_DEFECT_DENSITY_MODUEL_WISE</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@MID" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@PID" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Defect_id" DataSetColumn="Defect_id" />
+              <Mapping SourceColumn="Row_ID" DataSetColumn="Row_ID" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="OpenDate" DataSetColumn="OpenDate" />
+              <Mapping SourceColumn="CloseDate" DataSetColumn="CloseDate" />
+              <Mapping SourceColumn="Owner" DataSetColumn="Owner" />
+              <Mapping SourceColumn="Assigned_To" DataSetColumn="Assigned_To" />
+              <Mapping SourceColumn="Defect_Status" DataSetColumn="Defect_Status" />
+              <Mapping SourceColumn="RCA" DataSetColumn="RCA" />
+              <Mapping SourceColumn="Defect_Count" DataSetColumn="Defect_Count" />
+              <Mapping SourceColumn="Row_ID1" DataSetColumn="Row_ID1" />
+              <Mapping SourceColumn="PID" DataSetColumn="PID" />
+              <Mapping SourceColumn="MID" DataSetColumn="MID" />
+              <Mapping SourceColumn="SMID" DataSetColumn="SMID" />
+              <Mapping SourceColumn="TCID" DataSetColumn="TCID" />
+              <Mapping SourceColumn="Title" DataSetColumn="Title" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="TestBy" DataSetColumn="TestBy" />
+              <Mapping SourceColumn="PID1" DataSetColumn="PID1" />
+              <Mapping SourceColumn="Project_Name" DataSetColumn="Project_Name" />
+              <Mapping SourceColumn="StartDate" DataSetColumn="StartDate" />
+              <Mapping SourceColumn="EndDate" DataSetColumn="EndDate" />
+              <Mapping SourceColumn="PMID" DataSetColumn="PMID" />
+              <Mapping SourceColumn="PID2" DataSetColumn="PID2" />
+              <Mapping SourceColumn="MID1" DataSetColumn="MID1" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="Module_Lead" DataSetColumn="Module_Lead" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_DEFECT_SEVERITYTableAdapter" GeneratorDataComponentClassName="SP_DEFECT_SEVERITYTableAdapter" Name="SP_DEFECT_SEVERITY" UserDataComponentName="SP_DEFECT_SEVERITYTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="DMS_DB.dbo.SP_DEFECT_SEVERITY" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.SP_DEFECT_SEVERITY</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@PID" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Defect_id" DataSetColumn="Defect_id" />
+              <Mapping SourceColumn="Row_ID" DataSetColumn="Row_ID" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="OpenDate" DataSetColumn="OpenDate" />
+              <Mapping SourceColumn="CloseDate" DataSetColumn="CloseDate" />
+              <Mapping SourceColumn="Owner" DataSetColumn="Owner" />
+              <Mapping SourceColumn="Assigned_To" DataSetColumn="Assigned_To" />
+              <Mapping SourceColumn="Defect_Status" DataSetColumn="Defect_Status" />
+              <Mapping SourceColumn="RCA" DataSetColumn="RCA" />
+              <Mapping SourceColumn="Defect_Count" DataSetColumn="Defect_Count" />
+              <Mapping SourceColumn="DefectPiority" DataSetColumn="DefectPiority" />
+              <Mapping SourceColumn="DefectSeverity" DataSetColumn="DefectSeverity" />
+              <Mapping SourceColumn="Row_ID1" DataSetColumn="Row_ID1" />
+              <Mapping SourceColumn="PID" DataSetColumn="PID" />
+              <Mapping SourceColumn="MID" DataSetColumn="MID" />
+              <Mapping SourceColumn="SMID" DataSetColumn="SMID" />
+              <Mapping SourceColumn="TCID" DataSetColumn="TCID" />
+              <Mapping SourceColumn="Title" DataSetColumn="Title" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="TestBy" DataSetColumn="TestBy" />
+              <Mapping SourceColumn="PID1" DataSetColumn="PID1" />
+              <Mapping SourceColumn="Project_Name" DataSetColumn="Project_Name" />
+              <Mapping SourceColumn="StartDate" DataSetColumn="StartDate" />
+              <Mapping SourceColumn="EndDate" DataSetColumn="EndDate" />
+              <Mapping SourceColumn="PMID" DataSetColumn="PMID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RCATableAdapter" GeneratorDataComponentClassName="RCATableAdapter" Name="RCA" UserDataComponentName="RCATableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select * from Defect D join Testcase T on T.Row_ID=D.Row_ID join Project P on P.PID=T.PID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Defect_id" DataSetColumn="Defect_id" />
+              <Mapping SourceColumn="Row_ID" DataSetColumn="Row_ID" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="OpenDate" DataSetColumn="OpenDate" />
+              <Mapping SourceColumn="CloseDate" DataSetColumn="CloseDate" />
+              <Mapping SourceColumn="Owner" DataSetColumn="Owner" />
+              <Mapping SourceColumn="Assigned_To" DataSetColumn="Assigned_To" />
+              <Mapping SourceColumn="Defect_Status" DataSetColumn="Defect_Status" />
+              <Mapping SourceColumn="RCA" DataSetColumn="RCA" />
+              <Mapping SourceColumn="Defect_Count" DataSetColumn="Defect_Count" />
+              <Mapping SourceColumn="DefectPiority" DataSetColumn="DefectPiority" />
+              <Mapping SourceColumn="DefectSeverity" DataSetColumn="DefectSeverity" />
+              <Mapping SourceColumn="Row_ID1" DataSetColumn="Row_ID1" />
+              <Mapping SourceColumn="PID" DataSetColumn="PID" />
+              <Mapping SourceColumn="MID" DataSetColumn="MID" />
+              <Mapping SourceColumn="SMID" DataSetColumn="SMID" />
+              <Mapping SourceColumn="TCID" DataSetColumn="TCID" />
+              <Mapping SourceColumn="Title" DataSetColumn="Title" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="TestBy" DataSetColumn="TestBy" />
+              <Mapping SourceColumn="PID1" DataSetColumn="PID1" />
+              <Mapping SourceColumn="Project_Name" DataSetColumn="Project_Name" />
+              <Mapping SourceColumn="StartDate" DataSetColumn="StartDate" />
+              <Mapping SourceColumn="EndDate" DataSetColumn="EndDate" />
+              <Mapping SourceColumn="PMID" DataSetColumn="PMID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_REPORTS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_REPORTS" msprop:Generator_UserDSName="DS_REPORTS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DEFECT_DENSITY" msprop:Generator_TableClassName="DEFECT_DENSITYDataTable" msprop:Generator_TableVarName="tableDEFECT_DENSITY" msprop:Generator_TablePropName="DEFECT_DENSITY" msprop:Generator_RowDeletingName="DEFECT_DENSITYRowDeleting" msprop:Generator_RowChangingName="DEFECT_DENSITYRowChanging" msprop:Generator_RowEvHandlerName="DEFECT_DENSITYRowChangeEventHandler" msprop:Generator_RowDeletedName="DEFECT_DENSITYRowDeleted" msprop:Generator_UserTableName="DEFECT_DENSITY" msprop:Generator_RowChangedName="DEFECT_DENSITYRowChanged" msprop:Generator_RowEvArgName="DEFECT_DENSITYRowChangeEvent" msprop:Generator_RowClassName="DEFECT_DENSITYRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Defect_id" msprop:Generator_ColumnVarNameInTable="columnDefect_id" msprop:Generator_ColumnPropNameInRow="Defect_id" msprop:Generator_ColumnPropNameInTable="Defect_idColumn" msprop:Generator_UserColumnName="Defect_id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Row_ID" msprop:Generator_ColumnVarNameInTable="columnRow_ID" msprop:Generator_ColumnPropNameInRow="Row_ID" msprop:Generator_ColumnPropNameInTable="Row_IDColumn" msprop:Generator_UserColumnName="Row_ID" type="xs:int" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OpenDate" msprop:Generator_ColumnVarNameInTable="columnOpenDate" msprop:Generator_ColumnPropNameInRow="OpenDate" msprop:Generator_ColumnPropNameInTable="OpenDateColumn" msprop:Generator_UserColumnName="OpenDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CloseDate" msprop:Generator_ColumnVarNameInTable="columnCloseDate" msprop:Generator_ColumnPropNameInRow="CloseDate" msprop:Generator_ColumnPropNameInTable="CloseDateColumn" msprop:Generator_UserColumnName="CloseDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Owner" msprop:Generator_ColumnVarNameInTable="columnOwner" msprop:Generator_ColumnPropNameInRow="Owner" msprop:Generator_ColumnPropNameInTable="OwnerColumn" msprop:Generator_UserColumnName="Owner" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Assigned_To" msprop:Generator_ColumnVarNameInTable="columnAssigned_To" msprop:Generator_ColumnPropNameInRow="Assigned_To" msprop:Generator_ColumnPropNameInTable="Assigned_ToColumn" msprop:Generator_UserColumnName="Assigned_To" type="xs:int" minOccurs="0" />
+              <xs:element name="Defect_Status" msprop:Generator_ColumnVarNameInTable="columnDefect_Status" msprop:Generator_ColumnPropNameInRow="Defect_Status" msprop:Generator_ColumnPropNameInTable="Defect_StatusColumn" msprop:Generator_UserColumnName="Defect_Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RCA" msprop:Generator_ColumnVarNameInTable="columnRCA" msprop:Generator_ColumnPropNameInRow="RCA" msprop:Generator_ColumnPropNameInTable="RCAColumn" msprop:Generator_UserColumnName="RCA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Defect_Count" msprop:Generator_ColumnVarNameInTable="columnDefect_Count" msprop:Generator_ColumnPropNameInRow="Defect_Count" msprop:Generator_ColumnPropNameInTable="Defect_CountColumn" msprop:Generator_UserColumnName="Defect_Count" type="xs:int" minOccurs="0" />
+              <xs:element name="PID" msprop:Generator_ColumnVarNameInTable="columnPID" msprop:Generator_ColumnPropNameInRow="PID" msprop:Generator_ColumnPropNameInTable="PIDColumn" msprop:Generator_UserColumnName="PID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MID" msprop:Generator_ColumnVarNameInTable="columnMID" msprop:Generator_ColumnPropNameInRow="MID" msprop:Generator_ColumnPropNameInTable="MIDColumn" msprop:Generator_UserColumnName="MID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SMID" msprop:Generator_ColumnVarNameInTable="columnSMID" msprop:Generator_ColumnPropNameInRow="SMID" msprop:Generator_ColumnPropNameInTable="SMIDColumn" msprop:Generator_UserColumnName="SMID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TCID" msprop:Generator_ColumnVarNameInTable="columnTCID" msprop:Generator_ColumnPropNameInRow="TCID" msprop:Generator_ColumnPropNameInTable="TCIDColumn" msprop:Generator_UserColumnName="TCID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TestBy" msprop:Generator_ColumnVarNameInTable="columnTestBy" msprop:Generator_ColumnPropNameInRow="TestBy" msprop:Generator_ColumnPropNameInTable="TestByColumn" msprop:Generator_UserColumnName="TestBy" type="xs:int" minOccurs="0" />
+              <xs:element name="Row_ID1" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnRow_ID1" msprop:Generator_ColumnPropNameInRow="Row_ID1" msprop:Generator_ColumnPropNameInTable="Row_ID1Column" msprop:Generator_UserColumnName="Row_ID1" type="xs:int" />
+              <xs:element name="PID1" msprop:Generator_ColumnVarNameInTable="columnPID1" msprop:Generator_ColumnPropNameInRow="PID1" msprop:Generator_ColumnPropNameInTable="PID1Column" msprop:Generator_UserColumnName="PID1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Project_Name" msprop:Generator_ColumnVarNameInTable="columnProject_Name" msprop:Generator_ColumnPropNameInRow="Project_Name" msprop:Generator_ColumnPropNameInTable="Project_NameColumn" msprop:Generator_UserColumnName="Project_Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StartDate" msprop:Generator_ColumnVarNameInTable="columnStartDate" msprop:Generator_ColumnPropNameInRow="StartDate" msprop:Generator_ColumnPropNameInTable="StartDateColumn" msprop:Generator_UserColumnName="StartDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EndDate" msprop:Generator_ColumnVarNameInTable="columnEndDate" msprop:Generator_ColumnPropNameInRow="EndDate" msprop:Generator_ColumnPropNameInTable="EndDateColumn" msprop:Generator_UserColumnName="EndDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PMID" msprop:Generator_ColumnVarNameInTable="columnPMID" msprop:Generator_ColumnPropNameInRow="PMID" msprop:Generator_ColumnPropNameInTable="PMIDColumn" msprop:Generator_UserColumnName="PMID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DRR" msprop:Generator_TableClassName="DRRDataTable" msprop:Generator_TableVarName="tableDRR" msprop:Generator_RowChangedName="DRRRowChanged" msprop:Generator_TablePropName="DRR" msprop:Generator_RowDeletingName="DRRRowDeleting" msprop:Generator_RowChangingName="DRRRowChanging" msprop:Generator_RowEvHandlerName="DRRRowChangeEventHandler" msprop:Generator_RowDeletedName="DRRRowDeleted" msprop:Generator_RowClassName="DRRRow" msprop:Generator_UserTableName="DRR" msprop:Generator_RowEvArgName="DRRRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Defect_id" msprop:Generator_ColumnVarNameInTable="columnDefect_id" msprop:Generator_ColumnPropNameInRow="Defect_id" msprop:Generator_ColumnPropNameInTable="Defect_idColumn" msprop:Generator_UserColumnName="Defect_id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Row_ID" msprop:Generator_ColumnVarNameInTable="columnRow_ID" msprop:Generator_ColumnPropNameInRow="Row_ID" msprop:Generator_ColumnPropNameInTable="Row_IDColumn" msprop:Generator_UserColumnName="Row_ID" type="xs:int" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OpenDate" msprop:Generator_ColumnVarNameInTable="columnOpenDate" msprop:Generator_ColumnPropNameInRow="OpenDate" msprop:Generator_ColumnPropNameInTable="OpenDateColumn" msprop:Generator_UserColumnName="OpenDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CloseDate" msprop:Generator_ColumnVarNameInTable="columnCloseDate" msprop:Generator_ColumnPropNameInRow="CloseDate" msprop:Generator_ColumnPropNameInTable="CloseDateColumn" msprop:Generator_UserColumnName="CloseDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Owner" msprop:Generator_ColumnVarNameInTable="columnOwner" msprop:Generator_ColumnPropNameInRow="Owner" msprop:Generator_ColumnPropNameInTable="OwnerColumn" msprop:Generator_UserColumnName="Owner" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Assigned_To" msprop:Generator_ColumnVarNameInTable="columnAssigned_To" msprop:Generator_ColumnPropNameInRow="Assigned_To" msprop:Generator_ColumnPropNameInTable="Assigned_ToColumn" msprop:Generator_UserColumnName="Assigned_To" type="xs:int" minOccurs="0" />
+              <xs:element name="Defect_Status" msprop:Generator_ColumnVarNameInTable="columnDefect_Status" msprop:Generator_ColumnPropNameInRow="Defect_Status" msprop:Generator_ColumnPropNameInTable="Defect_StatusColumn" msprop:Generator_UserColumnName="Defect_Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RCA" msprop:Generator_ColumnVarNameInTable="columnRCA" msprop:Generator_ColumnPropNameInRow="RCA" msprop:Generator_ColumnPropNameInTable="RCAColumn" msprop:Generator_UserColumnName="RCA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Defect_Count" msprop:Generator_ColumnVarNameInTable="columnDefect_Count" msprop:Generator_ColumnPropNameInRow="Defect_Count" msprop:Generator_ColumnPropNameInTable="Defect_CountColumn" msprop:Generator_UserColumnName="Defect_Count" type="xs:int" minOccurs="0" />
+              <xs:element name="Expr1" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:int" />
+              <xs:element name="PID" msprop:Generator_ColumnVarNameInTable="columnPID" msprop:Generator_ColumnPropNameInRow="PID" msprop:Generator_ColumnPropNameInTable="PIDColumn" msprop:Generator_UserColumnName="PID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MID" msprop:Generator_ColumnVarNameInTable="columnMID" msprop:Generator_ColumnPropNameInRow="MID" msprop:Generator_ColumnPropNameInTable="MIDColumn" msprop:Generator_UserColumnName="MID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SMID" msprop:Generator_ColumnVarNameInTable="columnSMID" msprop:Generator_ColumnPropNameInRow="SMID" msprop:Generator_ColumnPropNameInTable="SMIDColumn" msprop:Generator_UserColumnName="SMID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TCID" msprop:Generator_ColumnVarNameInTable="columnTCID" msprop:Generator_ColumnPropNameInRow="TCID" msprop:Generator_ColumnPropNameInTable="TCIDColumn" msprop:Generator_UserColumnName="TCID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TestBy" msprop:Generator_ColumnVarNameInTable="columnTestBy" msprop:Generator_ColumnPropNameInRow="TestBy" msprop:Generator_ColumnPropNameInTable="TestByColumn" msprop:Generator_UserColumnName="TestBy" type="xs:int" minOccurs="0" />
+              <xs:element name="Expr2" msprop:Generator_ColumnVarNameInTable="columnExpr2" msprop:Generator_ColumnPropNameInRow="Expr2" msprop:Generator_ColumnPropNameInTable="Expr2Column" msprop:Generator_UserColumnName="Expr2">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Project_Name" msprop:Generator_ColumnVarNameInTable="columnProject_Name" msprop:Generator_ColumnPropNameInRow="Project_Name" msprop:Generator_ColumnPropNameInTable="Project_NameColumn" msprop:Generator_UserColumnName="Project_Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StartDate" msprop:Generator_ColumnVarNameInTable="columnStartDate" msprop:Generator_ColumnPropNameInRow="StartDate" msprop:Generator_ColumnPropNameInTable="StartDateColumn" msprop:Generator_UserColumnName="StartDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EndDate" msprop:Generator_ColumnVarNameInTable="columnEndDate" msprop:Generator_ColumnPropNameInRow="EndDate" msprop:Generator_ColumnPropNameInTable="EndDateColumn" msprop:Generator_UserColumnName="EndDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PMID" msprop:Generator_ColumnVarNameInTable="columnPMID" msprop:Generator_ColumnPropNameInRow="PMID" msprop:Generator_ColumnPropNameInTable="PMIDColumn" msprop:Generator_UserColumnName="PMID" type="xs:int" minOccurs="0" />
+              <xs:element name="UID" msprop:Generator_ColumnVarNameInTable="columnUID" msprop:Generator_ColumnPropNameInRow="UID" msprop:Generator_ColumnPropNameInTable="UIDColumn" msprop:Generator_UserColumnName="UID" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_UserColumnName="Email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Password" msprop:Generator_ColumnVarNameInTable="columnPassword" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_ColumnPropNameInTable="PasswordColumn" msprop:Generator_UserColumnName="Password" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="User_Role" msprop:Generator_ColumnVarNameInTable="columnUser_Role" msprop:Generator_ColumnPropNameInRow="User_Role" msprop:Generator_ColumnPropNameInTable="User_RoleColumn" msprop:Generator_UserColumnName="User_Role" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OpenVSClosed" msprop:Generator_TableClassName="OpenVSClosedDataTable" msprop:Generator_TableVarName="tableOpenVSClosed" msprop:Generator_RowChangedName="OpenVSClosedRowChanged" msprop:Generator_TablePropName="OpenVSClosed" msprop:Generator_RowDeletingName="OpenVSClosedRowDeleting" msprop:Generator_RowChangingName="OpenVSClosedRowChanging" msprop:Generator_RowEvHandlerName="OpenVSClosedRowChangeEventHandler" msprop:Generator_RowDeletedName="OpenVSClosedRowDeleted" msprop:Generator_RowClassName="OpenVSClosedRow" msprop:Generator_UserTableName="OpenVSClosed" msprop:Generator_RowEvArgName="OpenVSClosedRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Defect_id" msprop:Generator_ColumnVarNameInTable="columnDefect_id" msprop:Generator_ColumnPropNameInRow="Defect_id" msprop:Generator_ColumnPropNameInTable="Defect_idColumn" msprop:Generator_UserColumnName="Defect_id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Row_ID" msprop:Generator_ColumnVarNameInTable="columnRow_ID" msprop:Generator_ColumnPropNameInRow="Row_ID" msprop:Generator_ColumnPropNameInTable="Row_IDColumn" msprop:Generator_UserColumnName="Row_ID" type="xs:int" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OpenDate" msprop:Generator_ColumnVarNameInTable="columnOpenDate" msprop:Generator_ColumnPropNameInRow="OpenDate" msprop:Generator_ColumnPropNameInTable="OpenDateColumn" msprop:Generator_UserColumnName="OpenDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CloseDate" msprop:Generator_ColumnVarNameInTable="columnCloseDate" msprop:Generator_ColumnPropNameInRow="CloseDate" msprop:Generator_ColumnPropNameInTable="CloseDateColumn" msprop:Generator_UserColumnName="CloseDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Owner" msprop:Generator_ColumnVarNameInTable="columnOwner" msprop:Generator_ColumnPropNameInRow="Owner" msprop:Generator_ColumnPropNameInTable="OwnerColumn" msprop:Generator_UserColumnName="Owner" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Assigned_To" msprop:Generator_ColumnVarNameInTable="columnAssigned_To" msprop:Generator_ColumnPropNameInRow="Assigned_To" msprop:Generator_ColumnPropNameInTable="Assigned_ToColumn" msprop:Generator_UserColumnName="Assigned_To" type="xs:int" minOccurs="0" />
+              <xs:element name="Defect_Status" msprop:Generator_ColumnVarNameInTable="columnDefect_Status" msprop:Generator_ColumnPropNameInRow="Defect_Status" msprop:Generator_ColumnPropNameInTable="Defect_StatusColumn" msprop:Generator_UserColumnName="Defect_Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RCA" msprop:Generator_ColumnVarNameInTable="columnRCA" msprop:Generator_ColumnPropNameInRow="RCA" msprop:Generator_ColumnPropNameInTable="RCAColumn" msprop:Generator_UserColumnName="RCA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Defect_Count" msprop:Generator_ColumnVarNameInTable="columnDefect_Count" msprop:Generator_ColumnPropNameInRow="Defect_Count" msprop:Generator_ColumnPropNameInTable="Defect_CountColumn" msprop:Generator_UserColumnName="Defect_Count" type="xs:int" minOccurs="0" />
+              <xs:element name="Expr1" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:int" />
+              <xs:element name="PID" msprop:Generator_ColumnVarNameInTable="columnPID" msprop:Generator_ColumnPropNameInRow="PID" msprop:Generator_ColumnPropNameInTable="PIDColumn" msprop:Generator_UserColumnName="PID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MID" msprop:Generator_ColumnVarNameInTable="columnMID" msprop:Generator_ColumnPropNameInRow="MID" msprop:Generator_ColumnPropNameInTable="MIDColumn" msprop:Generator_UserColumnName="MID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SMID" msprop:Generator_ColumnVarNameInTable="columnSMID" msprop:Generator_ColumnPropNameInRow="SMID" msprop:Generator_ColumnPropNameInTable="SMIDColumn" msprop:Generator_UserColumnName="SMID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TCID" msprop:Generator_ColumnVarNameInTable="columnTCID" msprop:Generator_ColumnPropNameInRow="TCID" msprop:Generator_ColumnPropNameInTable="TCIDColumn" msprop:Generator_UserColumnName="TCID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TestBy" msprop:Generator_ColumnVarNameInTable="columnTestBy" msprop:Generator_ColumnPropNameInRow="TestBy" msprop:Generator_ColumnPropNameInTable="TestByColumn" msprop:Generator_UserColumnName="TestBy" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DD" msprop:Generator_TableClassName="DDDataTable" msprop:Generator_TableVarName="tableDD" msprop:Generator_TablePropName="DD" msprop:Generator_RowDeletingName="DDRowDeleting" msprop:Generator_RowChangingName="DDRowChanging" msprop:Generator_RowEvHandlerName="DDRowChangeEventHandler" msprop:Generator_RowDeletedName="DDRowDeleted" msprop:Generator_UserTableName="DD" msprop:Generator_RowChangedName="DDRowChanged" msprop:Generator_RowEvArgName="DDRowChangeEvent" msprop:Generator_RowClassName="DDRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Defect_id" msprop:Generator_ColumnVarNameInTable="columnDefect_id" msprop:Generator_ColumnPropNameInRow="Defect_id" msprop:Generator_ColumnPropNameInTable="Defect_idColumn" msprop:Generator_UserColumnName="Defect_id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Row_ID" msprop:Generator_ColumnVarNameInTable="columnRow_ID" msprop:Generator_ColumnPropNameInRow="Row_ID" msprop:Generator_ColumnPropNameInTable="Row_IDColumn" msprop:Generator_UserColumnName="Row_ID" type="xs:int" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OpenDate" msprop:Generator_ColumnVarNameInTable="columnOpenDate" msprop:Generator_ColumnPropNameInRow="OpenDate" msprop:Generator_ColumnPropNameInTable="OpenDateColumn" msprop:Generator_UserColumnName="OpenDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CloseDate" msprop:Generator_ColumnVarNameInTable="columnCloseDate" msprop:Generator_ColumnPropNameInRow="CloseDate" msprop:Generator_ColumnPropNameInTable="CloseDateColumn" msprop:Generator_UserColumnName="CloseDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Owner" msprop:Generator_ColumnVarNameInTable="columnOwner" msprop:Generator_ColumnPropNameInRow="Owner" msprop:Generator_ColumnPropNameInTable="OwnerColumn" msprop:Generator_UserColumnName="Owner" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Assigned_To" msprop:Generator_ColumnVarNameInTable="columnAssigned_To" msprop:Generator_ColumnPropNameInRow="Assigned_To" msprop:Generator_ColumnPropNameInTable="Assigned_ToColumn" msprop:Generator_UserColumnName="Assigned_To" type="xs:int" minOccurs="0" />
+              <xs:element name="Defect_Status" msprop:Generator_ColumnVarNameInTable="columnDefect_Status" msprop:Generator_ColumnPropNameInRow="Defect_Status" msprop:Generator_ColumnPropNameInTable="Defect_StatusColumn" msprop:Generator_UserColumnName="Defect_Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RCA" msprop:Generator_ColumnVarNameInTable="columnRCA" msprop:Generator_ColumnPropNameInRow="RCA" msprop:Generator_ColumnPropNameInTable="RCAColumn" msprop:Generator_UserColumnName="RCA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Defect_Count" msprop:Generator_ColumnVarNameInTable="columnDefect_Count" msprop:Generator_ColumnPropNameInRow="Defect_Count" msprop:Generator_ColumnPropNameInTable="Defect_CountColumn" msprop:Generator_UserColumnName="Defect_Count" type="xs:int" minOccurs="0" />
+              <xs:element name="Expr1" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:int" />
+              <xs:element name="PID" msprop:Generator_ColumnVarNameInTable="columnPID" msprop:Generator_ColumnPropNameInRow="PID" msprop:Generator_ColumnPropNameInTable="PIDColumn" msprop:Generator_UserColumnName="PID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MID" msprop:Generator_ColumnVarNameInTable="columnMID" msprop:Generator_ColumnPropNameInRow="MID" msprop:Generator_ColumnPropNameInTable="MIDColumn" msprop:Generator_UserColumnName="MID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SMID" msprop:Generator_ColumnVarNameInTable="columnSMID" msprop:Generator_ColumnPropNameInRow="SMID" msprop:Generator_ColumnPropNameInTable="SMIDColumn" msprop:Generator_UserColumnName="SMID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TCID" msprop:Generator_ColumnVarNameInTable="columnTCID" msprop:Generator_ColumnPropNameInRow="TCID" msprop:Generator_ColumnPropNameInTable="TCIDColumn" msprop:Generator_UserColumnName="TCID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TestBy" msprop:Generator_ColumnVarNameInTable="columnTestBy" msprop:Generator_ColumnPropNameInRow="TestBy" msprop:Generator_ColumnPropNameInTable="TestByColumn" msprop:Generator_UserColumnName="TestBy" type="xs:int" minOccurs="0" />
+              <xs:element name="Expr2" msprop:Generator_ColumnVarNameInTable="columnExpr2" msprop:Generator_ColumnPropNameInRow="Expr2" msprop:Generator_ColumnPropNameInTable="Expr2Column" msprop:Generator_UserColumnName="Expr2">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Project_Name" msprop:Generator_ColumnVarNameInTable="columnProject_Name" msprop:Generator_ColumnPropNameInRow="Project_Name" msprop:Generator_ColumnPropNameInTable="Project_NameColumn" msprop:Generator_UserColumnName="Project_Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StartDate" msprop:Generator_ColumnVarNameInTable="columnStartDate" msprop:Generator_ColumnPropNameInRow="StartDate" msprop:Generator_ColumnPropNameInTable="StartDateColumn" msprop:Generator_UserColumnName="StartDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EndDate" msprop:Generator_ColumnVarNameInTable="columnEndDate" msprop:Generator_ColumnPropNameInRow="EndDate" msprop:Generator_ColumnPropNameInTable="EndDateColumn" msprop:Generator_UserColumnName="EndDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PMID" msprop:Generator_ColumnVarNameInTable="columnPMID" msprop:Generator_ColumnPropNameInRow="PMID" msprop:Generator_ColumnPropNameInTable="PMIDColumn" msprop:Generator_UserColumnName="PMID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="lIFE_CYCLE" msprop:Generator_TableClassName="lIFE_CYCLEDataTable" msprop:Generator_TableVarName="tablelIFE_CYCLE" msprop:Generator_TablePropName="lIFE_CYCLE" msprop:Generator_RowDeletingName="lIFE_CYCLERowDeleting" msprop:Generator_RowChangingName="lIFE_CYCLERowChanging" msprop:Generator_RowEvHandlerName="lIFE_CYCLERowChangeEventHandler" msprop:Generator_RowDeletedName="lIFE_CYCLERowDeleted" msprop:Generator_UserTableName="lIFE_CYCLE" msprop:Generator_RowChangedName="lIFE_CYCLERowChanged" msprop:Generator_RowEvArgName="lIFE_CYCLERowChangeEvent" msprop:Generator_RowClassName="lIFE_CYCLERow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Defect_id" msprop:Generator_ColumnVarNameInTable="columnDefect_id" msprop:Generator_ColumnPropNameInRow="Defect_id" msprop:Generator_ColumnPropNameInTable="Defect_idColumn" msprop:Generator_UserColumnName="Defect_id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Row_ID" msprop:Generator_ColumnVarNameInTable="columnRow_ID" msprop:Generator_ColumnPropNameInRow="Row_ID" msprop:Generator_ColumnPropNameInTable="Row_IDColumn" msprop:Generator_UserColumnName="Row_ID" type="xs:int" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OpenDate" msprop:Generator_ColumnVarNameInTable="columnOpenDate" msprop:Generator_ColumnPropNameInRow="OpenDate" msprop:Generator_ColumnPropNameInTable="OpenDateColumn" msprop:Generator_UserColumnName="OpenDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CloseDate" msprop:Generator_ColumnVarNameInTable="columnCloseDate" msprop:Generator_ColumnPropNameInRow="CloseDate" msprop:Generator_ColumnPropNameInTable="CloseDateColumn" msprop:Generator_UserColumnName="CloseDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Owner" msprop:Generator_ColumnVarNameInTable="columnOwner" msprop:Generator_ColumnPropNameInRow="Owner" msprop:Generator_ColumnPropNameInTable="OwnerColumn" msprop:Generator_UserColumnName="Owner" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Assigned_To" msprop:Generator_ColumnVarNameInTable="columnAssigned_To" msprop:Generator_ColumnPropNameInRow="Assigned_To" msprop:Generator_ColumnPropNameInTable="Assigned_ToColumn" msprop:Generator_UserColumnName="Assigned_To" type="xs:int" minOccurs="0" />
+              <xs:element name="Defect_Status" msprop:Generator_ColumnVarNameInTable="columnDefect_Status" msprop:Generator_ColumnPropNameInRow="Defect_Status" msprop:Generator_ColumnPropNameInTable="Defect_StatusColumn" msprop:Generator_UserColumnName="Defect_Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RCA" msprop:Generator_ColumnVarNameInTable="columnRCA" msprop:Generator_ColumnPropNameInRow="RCA" msprop:Generator_ColumnPropNameInTable="RCAColumn" msprop:Generator_UserColumnName="RCA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Defect_Count" msprop:Generator_ColumnVarNameInTable="columnDefect_Count" msprop:Generator_ColumnPropNameInRow="Defect_Count" msprop:Generator_ColumnPropNameInTable="Defect_CountColumn" msprop:Generator_UserColumnName="Defect_Count" type="xs:int" minOccurs="0" />
+              <xs:element name="Expr1" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:int" />
+              <xs:element name="PID" msprop:Generator_ColumnVarNameInTable="columnPID" msprop:Generator_ColumnPropNameInRow="PID" msprop:Generator_ColumnPropNameInTable="PIDColumn" msprop:Generator_UserColumnName="PID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MID" msprop:Generator_ColumnVarNameInTable="columnMID" msprop:Generator_ColumnPropNameInRow="MID" msprop:Generator_ColumnPropNameInTable="MIDColumn" msprop:Generator_UserColumnName="MID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SMID" msprop:Generator_ColumnVarNameInTable="columnSMID" msprop:Generator_ColumnPropNameInRow="SMID" msprop:Generator_ColumnPropNameInTable="SMIDColumn" msprop:Generator_UserColumnName="SMID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TCID" msprop:Generator_ColumnVarNameInTable="columnTCID" msprop:Generator_ColumnPropNameInRow="TCID" msprop:Generator_ColumnPropNameInTable="TCIDColumn" msprop:Generator_UserColumnName="TCID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TestBy" msprop:Generator_ColumnVarNameInTable="columnTestBy" msprop:Generator_ColumnPropNameInRow="TestBy" msprop:Generator_ColumnPropNameInTable="TestByColumn" msprop:Generator_UserColumnName="TestBy" type="xs:int" minOccurs="0" />
+              <xs:element name="Expr2" msprop:Generator_ColumnVarNameInTable="columnExpr2" msprop:Generator_ColumnPropNameInRow="Expr2" msprop:Generator_ColumnPropNameInTable="Expr2Column" msprop:Generator_UserColumnName="Expr2">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Project_Name" msprop:Generator_ColumnVarNameInTable="columnProject_Name" msprop:Generator_ColumnPropNameInRow="Project_Name" msprop:Generator_ColumnPropNameInTable="Project_NameColumn" msprop:Generator_UserColumnName="Project_Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StartDate" msprop:Generator_ColumnVarNameInTable="columnStartDate" msprop:Generator_ColumnPropNameInRow="StartDate" msprop:Generator_ColumnPropNameInTable="StartDateColumn" msprop:Generator_UserColumnName="StartDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EndDate" msprop:Generator_ColumnVarNameInTable="columnEndDate" msprop:Generator_ColumnPropNameInRow="EndDate" msprop:Generator_ColumnPropNameInTable="EndDateColumn" msprop:Generator_UserColumnName="EndDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PMID" msprop:Generator_ColumnVarNameInTable="columnPMID" msprop:Generator_ColumnPropNameInRow="PMID" msprop:Generator_ColumnPropNameInTable="PMIDColumn" msprop:Generator_UserColumnName="PMID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SP_GET_DEFECT_AGE" msprop:Generator_TableClassName="SP_GET_DEFECT_AGEDataTable" msprop:Generator_TableVarName="tableSP_GET_DEFECT_AGE" msprop:Generator_RowChangedName="SP_GET_DEFECT_AGERowChanged" msprop:Generator_TablePropName="SP_GET_DEFECT_AGE" msprop:Generator_RowDeletingName="SP_GET_DEFECT_AGERowDeleting" msprop:Generator_RowChangingName="SP_GET_DEFECT_AGERowChanging" msprop:Generator_RowEvHandlerName="SP_GET_DEFECT_AGERowChangeEventHandler" msprop:Generator_RowDeletedName="SP_GET_DEFECT_AGERowDeleted" msprop:Generator_RowClassName="SP_GET_DEFECT_AGERow" msprop:Generator_UserTableName="SP_GET_DEFECT_AGE" msprop:Generator_RowEvArgName="SP_GET_DEFECT_AGERowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Defect_id" msprop:Generator_ColumnVarNameInTable="columnDefect_id" msprop:Generator_ColumnPropNameInRow="Defect_id" msprop:Generator_ColumnPropNameInTable="Defect_idColumn" msprop:Generator_UserColumnName="Defect_id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Row_ID" msprop:Generator_ColumnVarNameInTable="columnRow_ID" msprop:Generator_ColumnPropNameInRow="Row_ID" msprop:Generator_ColumnPropNameInTable="Row_IDColumn" msprop:Generator_UserColumnName="Row_ID" type="xs:int" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OpenDate" msprop:Generator_ColumnVarNameInTable="columnOpenDate" msprop:Generator_ColumnPropNameInRow="OpenDate" msprop:Generator_ColumnPropNameInTable="OpenDateColumn" msprop:Generator_UserColumnName="OpenDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CloseDate" msprop:Generator_ColumnVarNameInTable="columnCloseDate" msprop:Generator_ColumnPropNameInRow="CloseDate" msprop:Generator_ColumnPropNameInTable="CloseDateColumn" msprop:Generator_UserColumnName="CloseDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Owner" msprop:Generator_ColumnVarNameInTable="columnOwner" msprop:Generator_ColumnPropNameInRow="Owner" msprop:Generator_ColumnPropNameInTable="OwnerColumn" msprop:Generator_UserColumnName="Owner" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Assigned_To" msprop:Generator_ColumnVarNameInTable="columnAssigned_To" msprop:Generator_ColumnPropNameInRow="Assigned_To" msprop:Generator_ColumnPropNameInTable="Assigned_ToColumn" msprop:Generator_UserColumnName="Assigned_To" type="xs:int" minOccurs="0" />
+              <xs:element name="Defect_Status" msprop:Generator_ColumnVarNameInTable="columnDefect_Status" msprop:Generator_ColumnPropNameInRow="Defect_Status" msprop:Generator_ColumnPropNameInTable="Defect_StatusColumn" msprop:Generator_UserColumnName="Defect_Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RCA" msprop:Generator_ColumnVarNameInTable="columnRCA" msprop:Generator_ColumnPropNameInRow="RCA" msprop:Generator_ColumnPropNameInTable="RCAColumn" msprop:Generator_UserColumnName="RCA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Defect_Count" msprop:Generator_ColumnVarNameInTable="columnDefect_Count" msprop:Generator_ColumnPropNameInRow="Defect_Count" msprop:Generator_ColumnPropNameInTable="Defect_CountColumn" msprop:Generator_UserColumnName="Defect_Count" type="xs:int" minOccurs="0" />
+              <xs:element name="Row_ID1" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnRow_ID1" msprop:Generator_ColumnPropNameInRow="Row_ID1" msprop:Generator_ColumnPropNameInTable="Row_ID1Column" msprop:Generator_UserColumnName="Row_ID1" type="xs:int" />
+              <xs:element name="PID" msprop:Generator_ColumnVarNameInTable="columnPID" msprop:Generator_ColumnPropNameInRow="PID" msprop:Generator_ColumnPropNameInTable="PIDColumn" msprop:Generator_UserColumnName="PID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MID" msprop:Generator_ColumnVarNameInTable="columnMID" msprop:Generator_ColumnPropNameInRow="MID" msprop:Generator_ColumnPropNameInTable="MIDColumn" msprop:Generator_UserColumnName="MID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SMID" msprop:Generator_ColumnVarNameInTable="columnSMID" msprop:Generator_ColumnPropNameInRow="SMID" msprop:Generator_ColumnPropNameInTable="SMIDColumn" msprop:Generator_UserColumnName="SMID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TCID" msprop:Generator_ColumnVarNameInTable="columnTCID" msprop:Generator_ColumnPropNameInRow="TCID" msprop:Generator_ColumnPropNameInTable="TCIDColumn" msprop:Generator_UserColumnName="TCID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TestBy" msprop:Generator_ColumnVarNameInTable="columnTestBy" msprop:Generator_ColumnPropNameInRow="TestBy" msprop:Generator_ColumnPropNameInTable="TestByColumn" msprop:Generator_UserColumnName="TestBy" type="xs:int" minOccurs="0" />
+              <xs:element name="PID1" msprop:Generator_ColumnVarNameInTable="columnPID1" msprop:Generator_ColumnPropNameInRow="PID1" msprop:Generator_ColumnPropNameInTable="PID1Column" msprop:Generator_UserColumnName="PID1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Project_Name" msprop:Generator_ColumnVarNameInTable="columnProject_Name" msprop:Generator_ColumnPropNameInRow="Project_Name" msprop:Generator_ColumnPropNameInTable="Project_NameColumn" msprop:Generator_UserColumnName="Project_Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StartDate" msprop:Generator_ColumnVarNameInTable="columnStartDate" msprop:Generator_ColumnPropNameInRow="StartDate" msprop:Generator_ColumnPropNameInTable="StartDateColumn" msprop:Generator_UserColumnName="StartDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EndDate" msprop:Generator_ColumnVarNameInTable="columnEndDate" msprop:Generator_ColumnPropNameInRow="EndDate" msprop:Generator_ColumnPropNameInTable="EndDateColumn" msprop:Generator_UserColumnName="EndDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PMID" msprop:Generator_ColumnVarNameInTable="columnPMID" msprop:Generator_ColumnPropNameInRow="PMID" msprop:Generator_ColumnPropNameInTable="PMIDColumn" msprop:Generator_UserColumnName="PMID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SP_GET_DEFECT_DEFECT_DENSITY_MODUEL_WISE" msprop:Generator_TableClassName="SP_GET_DEFECT_DEFECT_DENSITY_MODUEL_WISEDataTable" msprop:Generator_TableVarName="tableSP_GET_DEFECT_DEFECT_DENSITY_MODUEL_WISE" msprop:Generator_TablePropName="SP_GET_DEFECT_DEFECT_DENSITY_MODUEL_WISE" msprop:Generator_RowDeletingName="SP_GET_DEFECT_DEFECT_DENSITY_MODUEL_WISERowDeleting" msprop:Generator_RowChangingName="SP_GET_DEFECT_DEFECT_DENSITY_MODUEL_WISERowChanging" msprop:Generator_RowEvHandlerName="SP_GET_DEFECT_DEFECT_DENSITY_MODUEL_WISERowChangeEventHandler" msprop:Generator_RowDeletedName="SP_GET_DEFECT_DEFECT_DENSITY_MODUEL_WISERowDeleted" msprop:Generator_UserTableName="SP_GET_DEFECT_DEFECT_DENSITY_MODUEL_WISE" msprop:Generator_RowChangedName="SP_GET_DEFECT_DEFECT_DENSITY_MODUEL_WISERowChanged" msprop:Generator_RowEvArgName="SP_GET_DEFECT_DEFECT_DENSITY_MODUEL_WISERowChangeEvent" msprop:Generator_RowClassName="SP_GET_DEFECT_DEFECT_DENSITY_MODUEL_WISERow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Defect_id" msprop:Generator_ColumnVarNameInTable="columnDefect_id" msprop:Generator_ColumnPropNameInRow="Defect_id" msprop:Generator_ColumnPropNameInTable="Defect_idColumn" msprop:Generator_UserColumnName="Defect_id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Row_ID" msprop:Generator_ColumnVarNameInTable="columnRow_ID" msprop:Generator_ColumnPropNameInRow="Row_ID" msprop:Generator_ColumnPropNameInTable="Row_IDColumn" msprop:Generator_UserColumnName="Row_ID" type="xs:int" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OpenDate" msprop:Generator_ColumnVarNameInTable="columnOpenDate" msprop:Generator_ColumnPropNameInRow="OpenDate" msprop:Generator_ColumnPropNameInTable="OpenDateColumn" msprop:Generator_UserColumnName="OpenDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CloseDate" msprop:Generator_ColumnVarNameInTable="columnCloseDate" msprop:Generator_ColumnPropNameInRow="CloseDate" msprop:Generator_ColumnPropNameInTable="CloseDateColumn" msprop:Generator_UserColumnName="CloseDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Owner" msprop:Generator_ColumnVarNameInTable="columnOwner" msprop:Generator_ColumnPropNameInRow="Owner" msprop:Generator_ColumnPropNameInTable="OwnerColumn" msprop:Generator_UserColumnName="Owner" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Assigned_To" msprop:Generator_ColumnVarNameInTable="columnAssigned_To" msprop:Generator_ColumnPropNameInRow="Assigned_To" msprop:Generator_ColumnPropNameInTable="Assigned_ToColumn" msprop:Generator_UserColumnName="Assigned_To" type="xs:int" minOccurs="0" />
+              <xs:element name="Defect_Status" msprop:Generator_ColumnVarNameInTable="columnDefect_Status" msprop:Generator_ColumnPropNameInRow="Defect_Status" msprop:Generator_ColumnPropNameInTable="Defect_StatusColumn" msprop:Generator_UserColumnName="Defect_Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RCA" msprop:Generator_ColumnVarNameInTable="columnRCA" msprop:Generator_ColumnPropNameInRow="RCA" msprop:Generator_ColumnPropNameInTable="RCAColumn" msprop:Generator_UserColumnName="RCA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Defect_Count" msprop:Generator_ColumnVarNameInTable="columnDefect_Count" msprop:Generator_ColumnPropNameInRow="Defect_Count" msprop:Generator_ColumnPropNameInTable="Defect_CountColumn" msprop:Generator_UserColumnName="Defect_Count" type="xs:int" minOccurs="0" />
+              <xs:element name="Row_ID1" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnRow_ID1" msprop:Generator_ColumnPropNameInRow="Row_ID1" msprop:Generator_ColumnPropNameInTable="Row_ID1Column" msprop:Generator_UserColumnName="Row_ID1" type="xs:int" />
+              <xs:element name="PID" msprop:Generator_ColumnVarNameInTable="columnPID" msprop:Generator_ColumnPropNameInRow="PID" msprop:Generator_ColumnPropNameInTable="PIDColumn" msprop:Generator_UserColumnName="PID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MID" msprop:Generator_ColumnVarNameInTable="columnMID" msprop:Generator_ColumnPropNameInRow="MID" msprop:Generator_ColumnPropNameInTable="MIDColumn" msprop:Generator_UserColumnName="MID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SMID" msprop:Generator_ColumnVarNameInTable="columnSMID" msprop:Generator_ColumnPropNameInRow="SMID" msprop:Generator_ColumnPropNameInTable="SMIDColumn" msprop:Generator_UserColumnName="SMID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TCID" msprop:Generator_ColumnVarNameInTable="columnTCID" msprop:Generator_ColumnPropNameInRow="TCID" msprop:Generator_ColumnPropNameInTable="TCIDColumn" msprop:Generator_UserColumnName="TCID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TestBy" msprop:Generator_ColumnVarNameInTable="columnTestBy" msprop:Generator_ColumnPropNameInRow="TestBy" msprop:Generator_ColumnPropNameInTable="TestByColumn" msprop:Generator_UserColumnName="TestBy" type="xs:int" minOccurs="0" />
+              <xs:element name="PID1" msprop:Generator_ColumnVarNameInTable="columnPID1" msprop:Generator_ColumnPropNameInRow="PID1" msprop:Generator_ColumnPropNameInTable="PID1Column" msprop:Generator_UserColumnName="PID1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Project_Name" msprop:Generator_ColumnVarNameInTable="columnProject_Name" msprop:Generator_ColumnPropNameInRow="Project_Name" msprop:Generator_ColumnPropNameInTable="Project_NameColumn" msprop:Generator_UserColumnName="Project_Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StartDate" msprop:Generator_ColumnVarNameInTable="columnStartDate" msprop:Generator_ColumnPropNameInRow="StartDate" msprop:Generator_ColumnPropNameInTable="StartDateColumn" msprop:Generator_UserColumnName="StartDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EndDate" msprop:Generator_ColumnVarNameInTable="columnEndDate" msprop:Generator_ColumnPropNameInRow="EndDate" msprop:Generator_ColumnPropNameInTable="EndDateColumn" msprop:Generator_UserColumnName="EndDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PMID" msprop:Generator_ColumnVarNameInTable="columnPMID" msprop:Generator_ColumnPropNameInRow="PMID" msprop:Generator_ColumnPropNameInTable="PMIDColumn" msprop:Generator_UserColumnName="PMID" type="xs:int" minOccurs="0" />
+              <xs:element name="PID2" msprop:Generator_ColumnVarNameInTable="columnPID2" msprop:Generator_ColumnPropNameInRow="PID2" msprop:Generator_ColumnPropNameInTable="PID2Column" msprop:Generator_UserColumnName="PID2">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MID1" msprop:Generator_ColumnVarNameInTable="columnMID1" msprop:Generator_ColumnPropNameInRow="MID1" msprop:Generator_ColumnPropNameInTable="MID1Column" msprop:Generator_UserColumnName="MID1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Module_Lead" msprop:Generator_ColumnVarNameInTable="columnModule_Lead" msprop:Generator_ColumnPropNameInRow="Module_Lead" msprop:Generator_ColumnPropNameInTable="Module_LeadColumn" msprop:Generator_UserColumnName="Module_Lead" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SP_DEFECT_SEVERITY" msprop:Generator_TableClassName="SP_DEFECT_SEVERITYDataTable" msprop:Generator_TableVarName="tableSP_DEFECT_SEVERITY" msprop:Generator_RowChangedName="SP_DEFECT_SEVERITYRowChanged" msprop:Generator_TablePropName="SP_DEFECT_SEVERITY" msprop:Generator_RowDeletingName="SP_DEFECT_SEVERITYRowDeleting" msprop:Generator_RowChangingName="SP_DEFECT_SEVERITYRowChanging" msprop:Generator_RowEvHandlerName="SP_DEFECT_SEVERITYRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_DEFECT_SEVERITYRowDeleted" msprop:Generator_RowClassName="SP_DEFECT_SEVERITYRow" msprop:Generator_UserTableName="SP_DEFECT_SEVERITY" msprop:Generator_RowEvArgName="SP_DEFECT_SEVERITYRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Defect_id" msprop:Generator_ColumnVarNameInTable="columnDefect_id" msprop:Generator_ColumnPropNameInRow="Defect_id" msprop:Generator_ColumnPropNameInTable="Defect_idColumn" msprop:Generator_UserColumnName="Defect_id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Row_ID" msprop:Generator_ColumnVarNameInTable="columnRow_ID" msprop:Generator_ColumnPropNameInRow="Row_ID" msprop:Generator_ColumnPropNameInTable="Row_IDColumn" msprop:Generator_UserColumnName="Row_ID" type="xs:int" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OpenDate" msprop:Generator_ColumnVarNameInTable="columnOpenDate" msprop:Generator_ColumnPropNameInRow="OpenDate" msprop:Generator_ColumnPropNameInTable="OpenDateColumn" msprop:Generator_UserColumnName="OpenDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CloseDate" msprop:Generator_ColumnVarNameInTable="columnCloseDate" msprop:Generator_ColumnPropNameInRow="CloseDate" msprop:Generator_ColumnPropNameInTable="CloseDateColumn" msprop:Generator_UserColumnName="CloseDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Owner" msprop:Generator_ColumnVarNameInTable="columnOwner" msprop:Generator_ColumnPropNameInRow="Owner" msprop:Generator_ColumnPropNameInTable="OwnerColumn" msprop:Generator_UserColumnName="Owner" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Assigned_To" msprop:Generator_ColumnVarNameInTable="columnAssigned_To" msprop:Generator_ColumnPropNameInRow="Assigned_To" msprop:Generator_ColumnPropNameInTable="Assigned_ToColumn" msprop:Generator_UserColumnName="Assigned_To" type="xs:int" minOccurs="0" />
+              <xs:element name="Defect_Status" msprop:Generator_ColumnVarNameInTable="columnDefect_Status" msprop:Generator_ColumnPropNameInRow="Defect_Status" msprop:Generator_ColumnPropNameInTable="Defect_StatusColumn" msprop:Generator_UserColumnName="Defect_Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RCA" msprop:Generator_ColumnVarNameInTable="columnRCA" msprop:Generator_ColumnPropNameInRow="RCA" msprop:Generator_ColumnPropNameInTable="RCAColumn" msprop:Generator_UserColumnName="RCA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Defect_Count" msprop:Generator_ColumnVarNameInTable="columnDefect_Count" msprop:Generator_ColumnPropNameInRow="Defect_Count" msprop:Generator_ColumnPropNameInTable="Defect_CountColumn" msprop:Generator_UserColumnName="Defect_Count" type="xs:int" minOccurs="0" />
+              <xs:element name="DefectPiority" msprop:Generator_ColumnVarNameInTable="columnDefectPiority" msprop:Generator_ColumnPropNameInRow="DefectPiority" msprop:Generator_ColumnPropNameInTable="DefectPiorityColumn" msprop:Generator_UserColumnName="DefectPiority" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DefectSeverity" msprop:Generator_ColumnVarNameInTable="columnDefectSeverity" msprop:Generator_ColumnPropNameInRow="DefectSeverity" msprop:Generator_ColumnPropNameInTable="DefectSeverityColumn" msprop:Generator_UserColumnName="DefectSeverity" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Row_ID1" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnRow_ID1" msprop:Generator_ColumnPropNameInRow="Row_ID1" msprop:Generator_ColumnPropNameInTable="Row_ID1Column" msprop:Generator_UserColumnName="Row_ID1" type="xs:int" />
+              <xs:element name="PID" msprop:Generator_ColumnVarNameInTable="columnPID" msprop:Generator_ColumnPropNameInRow="PID" msprop:Generator_ColumnPropNameInTable="PIDColumn" msprop:Generator_UserColumnName="PID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MID" msprop:Generator_ColumnVarNameInTable="columnMID" msprop:Generator_ColumnPropNameInRow="MID" msprop:Generator_ColumnPropNameInTable="MIDColumn" msprop:Generator_UserColumnName="MID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SMID" msprop:Generator_ColumnVarNameInTable="columnSMID" msprop:Generator_ColumnPropNameInRow="SMID" msprop:Generator_ColumnPropNameInTable="SMIDColumn" msprop:Generator_UserColumnName="SMID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TCID" msprop:Generator_ColumnVarNameInTable="columnTCID" msprop:Generator_ColumnPropNameInRow="TCID" msprop:Generator_ColumnPropNameInTable="TCIDColumn" msprop:Generator_UserColumnName="TCID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TestBy" msprop:Generator_ColumnVarNameInTable="columnTestBy" msprop:Generator_ColumnPropNameInRow="TestBy" msprop:Generator_ColumnPropNameInTable="TestByColumn" msprop:Generator_UserColumnName="TestBy" type="xs:int" minOccurs="0" />
+              <xs:element name="PID1" msprop:Generator_ColumnVarNameInTable="columnPID1" msprop:Generator_ColumnPropNameInRow="PID1" msprop:Generator_ColumnPropNameInTable="PID1Column" msprop:Generator_UserColumnName="PID1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Project_Name" msprop:Generator_ColumnVarNameInTable="columnProject_Name" msprop:Generator_ColumnPropNameInRow="Project_Name" msprop:Generator_ColumnPropNameInTable="Project_NameColumn" msprop:Generator_UserColumnName="Project_Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StartDate" msprop:Generator_ColumnVarNameInTable="columnStartDate" msprop:Generator_ColumnPropNameInRow="StartDate" msprop:Generator_ColumnPropNameInTable="StartDateColumn" msprop:Generator_UserColumnName="StartDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EndDate" msprop:Generator_ColumnVarNameInTable="columnEndDate" msprop:Generator_ColumnPropNameInRow="EndDate" msprop:Generator_ColumnPropNameInTable="EndDateColumn" msprop:Generator_UserColumnName="EndDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PMID" msprop:Generator_ColumnVarNameInTable="columnPMID" msprop:Generator_ColumnPropNameInRow="PMID" msprop:Generator_ColumnPropNameInTable="PMIDColumn" msprop:Generator_UserColumnName="PMID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RCA" msprop:Generator_TableClassName="RCADataTable" msprop:Generator_TableVarName="tableRCA" msprop:Generator_TablePropName="RCA" msprop:Generator_RowDeletingName="RCARowDeleting" msprop:Generator_RowChangingName="RCARowChanging" msprop:Generator_RowEvHandlerName="RCARowChangeEventHandler" msprop:Generator_RowDeletedName="RCARowDeleted" msprop:Generator_UserTableName="RCA" msprop:Generator_RowChangedName="RCARowChanged" msprop:Generator_RowEvArgName="RCARowChangeEvent" msprop:Generator_RowClassName="RCARow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Defect_id" msprop:Generator_ColumnVarNameInTable="columnDefect_id" msprop:Generator_ColumnPropNameInRow="Defect_id" msprop:Generator_ColumnPropNameInTable="Defect_idColumn" msprop:Generator_UserColumnName="Defect_id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Row_ID" msprop:Generator_ColumnVarNameInTable="columnRow_ID" msprop:Generator_ColumnPropNameInRow="Row_ID" msprop:Generator_ColumnPropNameInTable="Row_IDColumn" msprop:Generator_UserColumnName="Row_ID" type="xs:int" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OpenDate" msprop:Generator_ColumnVarNameInTable="columnOpenDate" msprop:Generator_ColumnPropNameInRow="OpenDate" msprop:Generator_ColumnPropNameInTable="OpenDateColumn" msprop:Generator_UserColumnName="OpenDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CloseDate" msprop:Generator_ColumnVarNameInTable="columnCloseDate" msprop:Generator_ColumnPropNameInRow="CloseDate" msprop:Generator_ColumnPropNameInTable="CloseDateColumn" msprop:Generator_UserColumnName="CloseDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Owner" msprop:Generator_ColumnVarNameInTable="columnOwner" msprop:Generator_ColumnPropNameInRow="Owner" msprop:Generator_ColumnPropNameInTable="OwnerColumn" msprop:Generator_UserColumnName="Owner" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Assigned_To" msprop:Generator_ColumnVarNameInTable="columnAssigned_To" msprop:Generator_ColumnPropNameInRow="Assigned_To" msprop:Generator_ColumnPropNameInTable="Assigned_ToColumn" msprop:Generator_UserColumnName="Assigned_To" type="xs:int" minOccurs="0" />
+              <xs:element name="Defect_Status" msprop:Generator_ColumnVarNameInTable="columnDefect_Status" msprop:Generator_ColumnPropNameInRow="Defect_Status" msprop:Generator_ColumnPropNameInTable="Defect_StatusColumn" msprop:Generator_UserColumnName="Defect_Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RCA" msprop:Generator_ColumnVarNameInTable="columnRCA" msprop:Generator_ColumnPropNameInRow="RCA" msprop:Generator_ColumnPropNameInTable="RCAColumn" msprop:Generator_UserColumnName="RCA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Defect_Count" msprop:Generator_ColumnVarNameInTable="columnDefect_Count" msprop:Generator_ColumnPropNameInRow="Defect_Count" msprop:Generator_ColumnPropNameInTable="Defect_CountColumn" msprop:Generator_UserColumnName="Defect_Count" type="xs:int" minOccurs="0" />
+              <xs:element name="DefectPiority" msprop:Generator_ColumnVarNameInTable="columnDefectPiority" msprop:Generator_ColumnPropNameInRow="DefectPiority" msprop:Generator_ColumnPropNameInTable="DefectPiorityColumn" msprop:Generator_UserColumnName="DefectPiority" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DefectSeverity" msprop:Generator_ColumnVarNameInTable="columnDefectSeverity" msprop:Generator_ColumnPropNameInRow="DefectSeverity" msprop:Generator_ColumnPropNameInTable="DefectSeverityColumn" msprop:Generator_UserColumnName="DefectSeverity" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Row_ID1" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnRow_ID1" msprop:Generator_ColumnPropNameInRow="Row_ID1" msprop:Generator_ColumnPropNameInTable="Row_ID1Column" msprop:Generator_UserColumnName="Row_ID1" type="xs:int" />
+              <xs:element name="PID" msprop:Generator_ColumnVarNameInTable="columnPID" msprop:Generator_ColumnPropNameInRow="PID" msprop:Generator_ColumnPropNameInTable="PIDColumn" msprop:Generator_UserColumnName="PID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MID" msprop:Generator_ColumnVarNameInTable="columnMID" msprop:Generator_ColumnPropNameInRow="MID" msprop:Generator_ColumnPropNameInTable="MIDColumn" msprop:Generator_UserColumnName="MID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SMID" msprop:Generator_ColumnVarNameInTable="columnSMID" msprop:Generator_ColumnPropNameInRow="SMID" msprop:Generator_ColumnPropNameInTable="SMIDColumn" msprop:Generator_UserColumnName="SMID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TCID" msprop:Generator_ColumnVarNameInTable="columnTCID" msprop:Generator_ColumnPropNameInRow="TCID" msprop:Generator_ColumnPropNameInTable="TCIDColumn" msprop:Generator_UserColumnName="TCID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TestBy" msprop:Generator_ColumnVarNameInTable="columnTestBy" msprop:Generator_ColumnPropNameInRow="TestBy" msprop:Generator_ColumnPropNameInTable="TestByColumn" msprop:Generator_UserColumnName="TestBy" type="xs:int" minOccurs="0" />
+              <xs:element name="PID1" msprop:Generator_ColumnVarNameInTable="columnPID1" msprop:Generator_ColumnPropNameInRow="PID1" msprop:Generator_ColumnPropNameInTable="PID1Column" msprop:Generator_UserColumnName="PID1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Project_Name" msprop:Generator_ColumnVarNameInTable="columnProject_Name" msprop:Generator_ColumnPropNameInRow="Project_Name" msprop:Generator_ColumnPropNameInTable="Project_NameColumn" msprop:Generator_UserColumnName="Project_Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StartDate" msprop:Generator_ColumnVarNameInTable="columnStartDate" msprop:Generator_ColumnPropNameInRow="StartDate" msprop:Generator_ColumnPropNameInTable="StartDateColumn" msprop:Generator_UserColumnName="StartDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EndDate" msprop:Generator_ColumnVarNameInTable="columnEndDate" msprop:Generator_ColumnPropNameInRow="EndDate" msprop:Generator_ColumnPropNameInTable="EndDateColumn" msprop:Generator_UserColumnName="EndDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PMID" msprop:Generator_ColumnVarNameInTable="columnPMID" msprop:Generator_ColumnPropNameInRow="PMID" msprop:Generator_ColumnPropNameInTable="PMIDColumn" msprop:Generator_UserColumnName="PMID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DEFECT_DENSITY" />
+      <xs:field xpath="mstns:Defect_id" />
+      <xs:field xpath="mstns:Row_ID1" />
+      <xs:field xpath="mstns:PID1" />
+    </xs:unique>
+    <xs:unique name="DRR_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DRR" />
+      <xs:field xpath="mstns:Defect_id" />
+      <xs:field xpath="mstns:Expr1" />
+      <xs:field xpath="mstns:Expr2" />
+      <xs:field xpath="mstns:UID" />
+    </xs:unique>
+    <xs:unique name="DD_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DD" />
+      <xs:field xpath="mstns:Defect_id" />
+      <xs:field xpath="mstns:Expr1" />
+      <xs:field xpath="mstns:Expr2" />
+    </xs:unique>
+    <xs:unique name="lIFE_CYCLE_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:lIFE_CYCLE" />
+      <xs:field xpath="mstns:Defect_id" />
+      <xs:field xpath="mstns:Expr1" />
+      <xs:field xpath="mstns:Expr2" />
+    </xs:unique>
+    <xs:unique name="SP_GET_DEFECT_AGE_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SP_GET_DEFECT_AGE" />
+      <xs:field xpath="mstns:Defect_id" />
+      <xs:field xpath="mstns:Row_ID1" />
+      <xs:field xpath="mstns:PID1" />
+    </xs:unique>
+    <xs:unique name="SP_GET_DEFECT_DEFECT_DENSITY_MODUEL_WISE_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SP_GET_DEFECT_DEFECT_DENSITY_MODUEL_WISE" />
+      <xs:field xpath="mstns:Defect_id" />
+      <xs:field xpath="mstns:Row_ID1" />
+      <xs:field xpath="mstns:PID1" />
+      <xs:field xpath="mstns:PID2" />
+      <xs:field xpath="mstns:MID1" />
+    </xs:unique>
+    <xs:unique name="SP_DEFECT_SEVERITY_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SP_DEFECT_SEVERITY" />
+      <xs:field xpath="mstns:Defect_id" />
+      <xs:field xpath="mstns:Row_ID1" />
+      <xs:field xpath="mstns:PID1" />
+    </xs:unique>
+    <xs:unique name="RCA_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RCA" />
+      <xs:field xpath="mstns:Defect_id" />
+      <xs:field xpath="mstns:Row_ID1" />
+      <xs:field xpath="mstns:PID1" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

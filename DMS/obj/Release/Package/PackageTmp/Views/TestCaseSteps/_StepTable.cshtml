@@ -1,0 +1,34 @@
+﻿@model System.Data.DataTable
+
+<table class="table table-bordered">
+    <tr>
+        <th style="width: 20px">#</th>
+        <th>Step </th>
+        <th>Step Data </th>
+        <th> Expected Result </th>
+        <th style="width: 5%"> Actions </th>
+    </tr>
+
+    @{ var Sid = 0;}
+
+    @for (int i = 0; i < Model.Rows.Count; i++)
+    {
+        <tr>
+            <td>@Model.Rows[i][6]</td>
+            <td>@Model.Rows[i][7]</td>
+            <td>@Model.Rows[i][8]</td>
+            <td>@Model.Rows[i][9]</td>
+
+            @{ Sid = Convert.ToInt32(@Model.Rows[i][6]);}
+
+            <td>
+                @*<a data-toggle="modal" data-target="#myModal" data-id ="@Sid" class="modalLink"><i class="fa fa-pencil" aria-hidden="true"></i></a>*@
+                @*&nbsp;*@
+                &nbsp;
+                <a href="@Url.Action("Delete", "TestCaseSteps", new { @Rid = @Model.Rows[i][0], @Sid = @Model.Rows[i][6] })" onclick="return confirm('Are you sure you wish to delete this Step?');"> <i class="fa fa-trash" aria-hidden="true"></i> </a>
+                &nbsp;
+            </td>
+        </tr>
+
+    }
+</table>

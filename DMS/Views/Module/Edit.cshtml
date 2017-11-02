@@ -1,0 +1,87 @@
+﻿@using DMS.Models
+@model Module
+
+@{
+    ViewBag.Title = "Edit Module";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Edit Module
+        </h1>
+    </section>
+
+    <ol class="breadcrumb">
+        <li><a href="@Url.Action("Index", "Project")"><i class="fa fa-th"></i> Projects</a></li>
+        <li><a href="@Url.Action("Index","Module", new { id = Model.PID })"><i class="fa fa-list-alt" aria-hidden="true"></i> Modules </a></li>
+        <li class="active">Edit Module </li>
+    </ol>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+
+            <div class="col-md-offset-3 col-md-6" style="margin-top:50px;">
+                <!-- Horizontal Form -->
+                <div class="box box-info">
+                    <!-- form start -->
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            <div class="box-body">
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.PID, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                                    <div class="col-sm-9">
+                                        @Html.EditorFor(model => model.PID, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control", @placeholder = "Project ID" } })
+                                        @Html.ValidationMessageFor(model => model.PID, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.MID, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                                    <div class="col-sm-9">
+                                        @Html.EditorFor(model => model.MID, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control", @placeholder = "Module ID" } })
+                                        @Html.ValidationMessageFor(model => model.MID, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                                    <div class="col-sm-9">
+                                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Module Name" } })
+                                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.ModuleLead, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                                    <div class="col-sm-9">
+                                        @Html.DropDownListFor(model => model.ModuleLead, UserRole.GetUserByRole("ML"), " -- Select ML -- ", new { @class = "form-control", @style = "width: 100%;" })
+                                        @Html.ValidationMessageFor(model => model.ModuleLead, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                            </div><!-- /.box-body -->
+
+                            <div class="box-footer">
+                                <a href="@Url.Action("Index","Module", new { id = Model.PID })" class="btn btn-default"> Cancel </a>
+                                <button type="submit" class="btn btn-info pull-right"> ADD Module </button>
+                            </div>
+
+                        </div>
+                    }
+                </div><!-- /.box -->
+            </div><!--/.col (right) -->
+        </div>   <!-- /.row -->
+    </section><!-- /.content -->
+</div><!-- /.content-wrapper -->
